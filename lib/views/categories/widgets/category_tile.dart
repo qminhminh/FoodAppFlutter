@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodappflutter/common/app_style.dart';
 import 'package:foodappflutter/common/reusable_text.dart';
 import 'package:foodappflutter/constants/constants.dart';
+import 'package:foodappflutter/models/categories.dart';
 import 'package:foodappflutter/views/categories/category_page.dart';
 import 'package:get/get.dart';
 
@@ -14,7 +15,7 @@ class CategoryTile extends StatelessWidget {
     required this.category,
   });
 
-  var category;
+  CategoriesModel category;
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +29,12 @@ class CategoryTile extends StatelessWidget {
         radius: 18.r,
         backgroundColor: kGrayLight,
         child: Image.network(
-          category["imageUrl"],
+          category.imageUrl,
           fit: BoxFit.contain,
         ),
       ),
       title: ReusableText(
-          text: category['title'],
-          style: appStyle(12, kGray, FontWeight.normal)),
+          text: category.title, style: appStyle(12, kGray, FontWeight.normal)),
       trailing: Icon(
         Icons.arrow_forward_ios_rounded,
         color: kGray,

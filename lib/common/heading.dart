@@ -6,10 +6,11 @@ import 'package:foodappflutter/common/reusable_text.dart';
 import 'package:foodappflutter/constants/constants.dart';
 
 class Heading extends StatelessWidget {
-  const Heading({super.key, required this.text, this.onTap});
+  const Heading({super.key, required this.text, this.onTap, this.more});
 
   final String text;
   final void Function()? onTap;
+  final bool? more;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,14 +23,16 @@ class Heading extends StatelessWidget {
             child: ReusableText(
                 text: text, style: appStyle(16, kDark, FontWeight.bold)),
           ),
-          GestureDetector(
-            onTap: onTap,
-            child: Icon(
-              AntDesign.appstore1,
-              color: kSecondary,
-              size: 20.sp,
-            ),
-          )
+          more == null
+              ? GestureDetector(
+                  onTap: onTap,
+                  child: Icon(
+                    AntDesign.appstore1,
+                    color: kSecondary,
+                    size: 20.sp,
+                  ),
+                )
+              : const SizedBox.shrink()
         ],
       ),
     );

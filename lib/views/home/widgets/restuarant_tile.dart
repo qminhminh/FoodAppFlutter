@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, unnecessary_null_comparison
+// ignore_for_file: prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';

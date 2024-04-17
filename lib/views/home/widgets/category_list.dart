@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable, unused_import
+// ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -18,21 +18,18 @@ class CategoryList extends HookWidget {
     final isLoading = hookResult.isLoading;
     final error = hookResult.error;
 
-    return Container(
-      height: 80.h,
-      padding: EdgeInsets.only(left: 12.w, top: 10.h),
-      child: isLoading
-          ? const CatergoriesShimmer()
-          : categoriesList != null
-              ? ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: List.generate(categoriesList.length, (i) {
-                    CategoriesModel category = categoriesList[i];
-                    return CategoryWidget(category: category);
-                  }),
-                )
-              : const Text(
-                  'No data available'), // Hiển thị thông báo khi không có dữ liệu
-    );
+    return isLoading
+        ? const CatergoriesShimmer()
+        : Container(
+            height: 80.h,
+            padding: EdgeInsets.only(left: 12.w, top: 10.h),
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: List.generate(categoriesList!.length, (i) {
+                CategoriesModel category = categoriesList[i];
+                return CategoryWidget(category: category);
+              }),
+            ),
+          );
   }
 }

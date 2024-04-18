@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_const_constructors_in_immutables, unnecessary_null_comparison
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -7,6 +7,8 @@ import 'package:foodappflutter/common/app_style.dart';
 import 'package:foodappflutter/common/reusable_text.dart';
 import 'package:foodappflutter/constants/constants.dart';
 import 'package:foodappflutter/models/restaurants_model.dart';
+import 'package:foodappflutter/views/restaurant/restaurant_page.dart';
+import 'package:get/get.dart';
 
 class RestaurantTile extends StatelessWidget {
   RestaurantTile({super.key, required this.restaurant});
@@ -16,7 +18,9 @@ class RestaurantTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Get.to(() => RestaurantPage(restaurant: restaurant));
+        },
         child: Stack(
           clipBehavior: Clip.hardEdge,
           children: [

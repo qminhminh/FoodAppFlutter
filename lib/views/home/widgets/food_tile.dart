@@ -8,6 +8,8 @@ import 'package:foodappflutter/common/app_style.dart';
 import 'package:foodappflutter/common/reusable_text.dart';
 import 'package:foodappflutter/constants/constants.dart';
 import 'package:foodappflutter/models/foods_model.dart';
+import 'package:foodappflutter/views/food/food_page.dart';
+import 'package:get/get.dart';
 
 class FoodTile extends StatelessWidget {
   FoodTile({super.key, required this.food, this.color});
@@ -18,7 +20,9 @@ class FoodTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Get.to(() => FoodPage(food: food));
+        },
         child: Stack(
           clipBehavior: Clip.hardEdge,
           children: [

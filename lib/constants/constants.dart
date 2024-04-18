@@ -21,3 +21,10 @@ double height = 825.h;
 double width = 375.w;
 
 const String appBaseUrl = "http://192.168.1.3:3000";
+
+final List<String> verificationReasons = [
+  'Real-time Updates: Get instant notifications about your order status.',
+  'Direct Communication: A verified number ensures seamless communication.',
+  'Enhanced Security: Protect your account and confirm orders securely.',
+  'Effortless Rescheduling: Easily address issues with a quick call.',
+];

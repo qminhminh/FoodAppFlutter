@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodappflutter/common/shimmers/nearby_shimmer.dart';
 import 'package:foodappflutter/hooks/fetch_foods.dart';
 import 'package:foodappflutter/models/foods_model.dart';
+import 'package:foodappflutter/views/food/food_page.dart';
 import 'package:foodappflutter/views/home/widgets/food_widget.dart';
+import 'package:get/get.dart';
 
 class FoodsList extends HookWidget {
   const FoodsList({super.key});
@@ -24,10 +26,14 @@ class FoodsList extends HookWidget {
               children: List.generate(foods.length, (i) {
                 FoodsModel food = foods[i];
                 return FoodWidget(
-                    image: food.imageUrl[0],
-                    title: food.title,
-                    time: food.time,
-                    price: food.price.toStringAsFixed(2));
+                  onTap: () {
+                    Get.to(() => FoodPage(food: food));
+                  },
+                  image: food.imageUrl[0],
+                  title: food.title,
+                  time: food.time,
+                  price: food.price.toStringAsFixed(2),
+                );
               }),
             ),
           );

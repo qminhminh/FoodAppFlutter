@@ -51,7 +51,7 @@ class ProfilePage extends StatelessWidget {
               height: 10.h,
             ),
             Container(
-              height: 175.h,
+              height: 200.h,
               decoration: const BoxDecoration(color: kLightWhite),
               child: ListView(
                 padding: EdgeInsets.zero,
@@ -82,7 +82,7 @@ class ProfilePage extends StatelessWidget {
               height: 15.h,
             ),
             Container(
-              height: 175.h,
+              height: 200.h,
               decoration: const BoxDecoration(color: kLightWhite),
               child: ListView(
                 padding: EdgeInsets.zero,

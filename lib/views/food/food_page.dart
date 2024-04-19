@@ -1,4 +1,4 @@
-// ignore_for_file: unrelated_type_equality_checks
+// ignore_for_file: unrelated_type_equality_checks, avoid_print
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -12,8 +12,11 @@ import 'package:foodappflutter/common/reusable_text.dart';
 import 'package:foodappflutter/common/verification_modal.dart';
 import 'package:foodappflutter/constants/constants.dart';
 import 'package:foodappflutter/controllers/foods_controller.dart';
+import 'package:foodappflutter/controllers/login_controller.dart';
 import 'package:foodappflutter/hooks/fetch_restaurant.dart';
 import 'package:foodappflutter/models/foods_model.dart';
+import 'package:foodappflutter/models/login_response.dart';
+import 'package:foodappflutter/views/auth/login_page.dart';
 import 'package:foodappflutter/views/restaurant/restaurant_page.dart';
 import 'package:get/get.dart';
 
@@ -32,8 +35,12 @@ class _FoodPageState extends State<FoodPage> {
 
   @override
   Widget build(BuildContext context) {
+    LoginResponse? user;
     final hookResult = useFetchRestaurant(widget.food.restaurant);
     final controller = Get.put(FoodController());
+    final loginController = Get.put(LoginController());
+
+    user = loginController.getUserInfo();
     controller.loadAdditives(widget.food.additives);
     return Scaffold(
       body: ListView(
@@ -178,9 +185,8 @@ class _FoodPageState extends State<FoodPage> {
                   height: 15.h,
                 ),
                 ReusableText(
-                  text: "Additives and Toppings",
-                  style: appStyle(18, kDark, FontWeight.w600),
-                ),
+                    text: "Additives and Toppings",
+                    style: appStyle(18, kDark, FontWeight.w600)),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -200,16 +206,15 @@ class _FoodPageState extends State<FoodPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               ReusableText(
-                                text: additive.title,
-                                style: appStyle(11, kDark, FontWeight.w400),
-                              ),
+                                  text: additive.title,
+                                  style: appStyle(11, kDark, FontWeight.w400)),
                               SizedBox(
                                 width: 5.w,
                               ),
                               ReusableText(
-                                text: "\$ ${additive.price}",
-                                style: appStyle(11, kPrimary, FontWeight.w600),
-                              ),
+                                  text: "\$ ${additive.price}",
+                                  style:
+                                      appStyle(11, kPrimary, FontWeight.w600)),
                             ],
                           ),
                           onChanged: (bool? value) {
@@ -226,7 +231,7 @@ class _FoodPageState extends State<FoodPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ReusableText(
-                        text: "Quantity",
+                        text: "Qauntity",
                         style: appStyle(18, kDark, FontWeight.bold)),
                     SizedBox(
                       width: 5.w,
@@ -288,7 +293,13 @@ class _FoodPageState extends State<FoodPage> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          showVerificationSheet(context);
+                          if (user == null) {
+                            Get.to(() => const LoginPage());
+                          } else if (user.phoneVerification == false) {
+                            showVerificationSheet(context);
+                          } else {
+                            print("Place Order");
+                          }
                         },
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 12.w),

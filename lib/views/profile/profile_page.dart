@@ -4,15 +4,40 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodappflutter/common/custom_button.dart';
 import 'package:foodappflutter/common/custom_container.dart';
 import 'package:foodappflutter/constants/constants.dart';
+import 'package:foodappflutter/controllers/login_controller.dart';
+import 'package:foodappflutter/models/login_response.dart';
+import 'package:foodappflutter/views/auth/login_redirect.dart';
+import 'package:foodappflutter/views/auth/verification_page.dart';
 import 'package:foodappflutter/views/profile/widget/profile_app_bar.dart';
 import 'package:foodappflutter/views/profile/widget/profile_tile_widget.dart';
 import 'package:foodappflutter/views/profile/widget/user_info_widget.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    LoginResponse? user;
+    final controller = Get.put(LoginController());
+
+    final box = GetStorage();
+
+    String? token = box.read('token');
+
+    if (token != null) {
+      user = controller.getUserInfo();
+    }
+
+    if (token == null) {
+      return const LoginRedirect();
+    }
+
+    if (user != null && user.verification == false) {
+      return const VerificationPage();
+    }
+
     return Scaffold(
       backgroundColor: kPrimary,
       appBar: PreferredSize(
@@ -21,19 +46,21 @@ class ProfilePage extends StatelessWidget {
         child: CustomContainer(
             containerContent: Column(
           children: [
-            const UserInfoWidget(),
+            UserInfoWidget(user: user),
             SizedBox(
               height: 10.h,
             ),
             Container(
-              height: 200.h,
+              height: 175.h,
               decoration: const BoxDecoration(color: kLightWhite),
               child: ListView(
                 padding: EdgeInsets.zero,
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
                   ProfileTileWidget(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => const LoginRedirect());
+                      },
                       title: "My Orders",
                       icon: Ionicons.fast_food_outline),
                   ProfileTileWidget(
@@ -55,7 +82,7 @@ class ProfilePage extends StatelessWidget {
               height: 15.h,
             ),
             Container(
-              height: 200.h,
+              height: 175.h,
               decoration: const BoxDecoration(color: kLightWhite),
               child: ListView(
                 padding: EdgeInsets.zero,
@@ -82,7 +109,9 @@ class ProfilePage extends StatelessWidget {
               height: 20.h,
             ),
             CustomButton(
-              onTap: () {},
+              onTap: () {
+                controller.logout();
+              },
               btnColor: kRed,
               text: "Logout",
               radius: 0,

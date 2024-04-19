@@ -260,7 +260,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_otp_text_field:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_otp_text_field
       sha256: c51dc7ce1a6fd9430580decda1104643f14703819e351c4a3074c9fe3d24cdbc

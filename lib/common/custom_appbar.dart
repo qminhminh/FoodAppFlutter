@@ -1,4 +1,7 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodappflutter/common/app_style.dart';
 import 'package:foodappflutter/common/reusable_text.dart';
@@ -8,7 +11,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class CustomAppBar extends StatefulWidget {
+class CustomAppBar extends StatefulHookWidget {
   const CustomAppBar({super.key});
 
   @override
@@ -58,9 +61,11 @@ class _CustomAppBarState extends State<CustomAppBar> {
                         () => SizedBox(
                           width: width * 0.65,
                           child: Text(
-                              controller.address == ""
-                                  ? "16768 21st Ave N, Plymouth, MN 55447"
-                                  : controller.address,
+                              controller.address1 == ""
+                                  ? controller.address == ''
+                                      ? "Please enable location services to get your address"
+                                      : controller.address
+                                  : controller.address1,
                               overflow: TextOverflow.ellipsis,
                               style:
                                   appStyle(11, kGrayLight, FontWeight.normal)),
@@ -130,6 +135,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
         desiredAccuracy: LocationAccuracy.best);
     LatLng currentLocation = LatLng(position.latitude, position.longitude);
     controller.setPosition(currentLocation);
+    print(currentLocation);
 
     controller.getUserAddress(currentLocation);
   }

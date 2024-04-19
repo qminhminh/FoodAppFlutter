@@ -1,16 +1,19 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:foodappflutter/constants/constants.dart';
 import 'package:foodappflutter/controllers/tab_index_controller.dart';
+import 'package:foodappflutter/hooks/fetch_default.dart';
 import 'package:foodappflutter/views/cart/cart_page.dart';
 import 'package:foodappflutter/views/home/home_page.dart';
 import 'package:foodappflutter/views/profile/profile_page.dart';
 import 'package:foodappflutter/views/search/search_page.dart';
 import 'package:get/get.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:get_storage/get_storage.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends HookWidget {
   MainScreen({super.key});
 
   List<Widget> pageList = const [
@@ -22,6 +25,13 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final box = GetStorage();
+    String? token = box.read("token");
+    debugPrint(token);
+    if (token != null) {
+      useFetchDefault();
+    }
+
     final controller = Get.put(TabIndexController());
     return Obx(() => Scaffold(
           body: Stack(

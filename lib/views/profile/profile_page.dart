@@ -8,6 +8,7 @@ import 'package:foodappflutter/controllers/login_controller.dart';
 import 'package:foodappflutter/models/login_response.dart';
 import 'package:foodappflutter/views/auth/login_redirect.dart';
 import 'package:foodappflutter/views/auth/verification_page.dart';
+import 'package:foodappflutter/views/profile/shipping_address.dart';
 import 'package:foodappflutter/views/profile/widget/profile_app_bar.dart';
 import 'package:foodappflutter/views/profile/widget/profile_tile_widget.dart';
 import 'package:foodappflutter/views/profile/widget/user_info_widget.dart';
@@ -89,7 +90,11 @@ class ProfilePage extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
                   ProfileTileWidget(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => const ShippingAddress(),
+                            transition: Transition.rightToLeft,
+                            duration: const Duration(milliseconds: 900));
+                      },
                       title: "Shipping Address",
                       icon: SimpleLineIcons.location_pin),
                   ProfileTileWidget(

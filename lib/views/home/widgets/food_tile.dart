@@ -7,6 +7,8 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodappflutter/common/app_style.dart';
 import 'package:foodappflutter/common/reusable_text.dart';
 import 'package:foodappflutter/constants/constants.dart';
+import 'package:foodappflutter/controllers/cart_controller.dart';
+import 'package:foodappflutter/models/cart_request.dart';
 import 'package:foodappflutter/models/foods_model.dart';
 import 'package:foodappflutter/views/food/food_page.dart';
 import 'package:get/get.dart';
@@ -19,6 +21,7 @@ class FoodTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(CartController());
     return GestureDetector(
         onTap: () {
           Get.to(() => FoodPage(food: food));
@@ -137,7 +140,16 @@ class FoodTile extends StatelessWidget {
               right: 75.w,
               top: 6.h,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  var data = CartRequest(
+                      productId: food.id,
+                      additives: [],
+                      quantity: 1,
+                      totalPrice: food.price);
+
+                  String cart = cartRequestToJson(data);
+                  controller.addToCart(cart);
+                },
                 child: Container(
                   width: 19.w,
                   height: 19.h,

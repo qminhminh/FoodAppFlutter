@@ -7,8 +7,10 @@ import 'package:foodappflutter/common/app_style.dart';
 import 'package:foodappflutter/common/reusable_text.dart';
 import 'package:foodappflutter/constants/constants.dart';
 import 'package:foodappflutter/controllers/user_location_controller.dart';
+import 'package:foodappflutter/hooks/fetch_default.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class CustomAppBar extends StatefulHookWidget {
@@ -27,6 +29,13 @@ class _CustomAppBarState extends State<CustomAppBar> {
 
   @override
   Widget build(BuildContext context) {
+    final box = GetStorage();
+    String? accessToken = box.read('token');
+
+    if (accessToken != null) {
+      useFetchDefault();
+    }
+
     final controller = Get.put(UserLocationController());
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),

@@ -28,3 +28,18 @@ final List<String> verificationReasons = [
   'Enhanced Security: Protect your account and confirm orders securely.',
   'Effortless Rescheduling: Easily address issues with a quick call.',
 ];
+List<String> orderList = [
+  "Pending",
+  "Preparing",
+  "Delivering",
+  "Delivered",
+  "Cancelled",
+];
+
+List<String> reasonsToAddAddress = [
+  "Ensures that food orders are delivered accurately to the customer’s location.",
+  "Allows users to check if the delivery service is available in their area.",
+  "Provides a personalized experience by showing nearby restaurants, estimated delivery times, and special offers.",
+  "Streamlines the checkout process by saving addresses for quicker order placement.",
+  "Enables management of multiple addresses (e.g., home, work) for easy switching.",
+];

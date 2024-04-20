@@ -36,7 +36,7 @@ class EmailTextField extends StatelessWidget {
           return null;
         }
       },
-      style: appStyle(12, kGray, FontWeight.normal),
+      style: appStyle(12, kDark, FontWeight.normal),
       decoration: InputDecoration(
           hintText: hintText,
           prefixIcon: prefixIcon,

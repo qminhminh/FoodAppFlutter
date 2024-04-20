@@ -8,7 +8,6 @@ import 'package:foodappflutter/constants/constants.dart';
 import 'package:foodappflutter/hooks/fetch_all_categories.dart';
 import 'package:foodappflutter/models/categories.dart';
 import 'package:foodappflutter/views/categories/widgets/category_tile.dart';
-
 import '../../common/shimmers/foodlist_shimmer.dart';
 
 class AllCategories extends HookWidget {

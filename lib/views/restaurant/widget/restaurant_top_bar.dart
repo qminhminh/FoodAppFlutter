@@ -35,9 +35,8 @@ class RestaurantTopBar extends StatelessWidget {
             ),
           ),
           ReusableText(
-            text: restaurant!.title,
-            style: appStyle(13, kDark, FontWeight.w600),
-          ),
+              text: restaurant!.title,
+              style: appStyle(13, kDark, FontWeight.w600)),
           GestureDetector(
             onTap: () {
               Get.to(() => const DirectionsPage());

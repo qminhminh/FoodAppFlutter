@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, unnecessary_null_comparison
+// ignore_for_file: unnecessary_null_comparison
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -11,7 +11,7 @@ import 'package:foodappflutter/views/restaurant/restaurant_page.dart';
 import 'package:get/get.dart';
 
 class RestaurantTile extends StatelessWidget {
-  RestaurantTile({super.key, required this.restaurant});
+  const RestaurantTile({super.key, required this.restaurant});
 
   final RestaurantsModel restaurant;
 

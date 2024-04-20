@@ -3,11 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:foodappflutter/constants/constants.dart';
+import 'package:foodappflutter/models/api_eror.dart';
 import 'package:foodappflutter/models/success_model.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
-import '../models/api_eror.dart';
 
 class RegistrationController extends GetxController {
   final box = GetStorage();

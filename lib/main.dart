@@ -5,12 +5,13 @@ import 'package:foodappflutter/constants/constants.dart';
 import 'package:foodappflutter/firebase_options.dart';
 import 'package:foodappflutter/views/entrypoint.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 Widget defaultHome = MainScreen();
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await GetStorage.init();
   runApp(const MyApp());
 }
 

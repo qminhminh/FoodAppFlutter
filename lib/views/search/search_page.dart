@@ -7,7 +7,7 @@ import 'package:foodappflutter/common/custom_container.dart';
 import 'package:foodappflutter/common/custom_text_field.dart';
 import 'package:foodappflutter/common/shimmers/foodlist_shimmer.dart';
 import 'package:foodappflutter/constants/constants.dart';
-import 'package:foodappflutter/controllers/search_controller.dart';
+import 'package:foodappflutter/controllers/search_results_controller.dart';
 import 'package:foodappflutter/views/search/loading_widget.dart';
 import 'package:foodappflutter/views/search/search_results.dart';
 import 'package:get/get.dart';

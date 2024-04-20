@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodappflutter/constants/constants.dart';
-import 'package:foodappflutter/controllers/search_controller.dart';
+import 'package:foodappflutter/controllers/search_results_controller.dart';
 import 'package:foodappflutter/models/foods_model.dart';
 import 'package:foodappflutter/views/home/widgets/food_tile.dart';
 import 'package:get/get.dart';

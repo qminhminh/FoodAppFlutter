@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, prefer_final_fields
+// ignore_for_file: prefer_final_fields
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -46,15 +46,13 @@ class _RestaurantPageState extends State<RestaurantPage>
                       fit: BoxFit.cover, imageUrl: widget.restaurant!.imageUrl),
                 ),
                 Positioned(
-                  bottom: 0,
-                  child: RestaurantBottomBar(restaurant: widget.restaurant),
-                ),
+                    bottom: 0,
+                    child: RestaurantBottomBar(restaurant: widget.restaurant)),
                 Positioned(
-                  top: 40.h,
-                  left: 0,
-                  right: 0,
-                  child: RestaurantTopBar(restaurant: widget.restaurant),
-                )
+                    top: 40.h,
+                    left: 0,
+                    right: 0,
+                    child: RestaurantTopBar(restaurant: widget.restaurant))
               ],
             ),
             SizedBox(
@@ -94,15 +92,13 @@ class _RestaurantPageState extends State<RestaurantPage>
                 height: 25.h,
                 width: width,
                 decoration: BoxDecoration(
-                  color: kOffWhite,
-                  borderRadius: BorderRadius.circular(25.r),
-                ),
+                    color: kOffWhite,
+                    borderRadius: BorderRadius.circular(25.r)),
                 child: TabBar(
                     controller: _tabController,
                     indicator: BoxDecoration(
-                      color: kPrimary,
-                      borderRadius: BorderRadius.circular(25.r),
-                    ),
+                        color: kPrimary,
+                        borderRadius: BorderRadius.circular(25.r)),
                     labelPadding: EdgeInsets.zero,
                     labelColor: kLightWhite,
                     labelStyle: appStyle(12, kLightWhite, FontWeight.normal),

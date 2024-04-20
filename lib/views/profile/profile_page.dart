@@ -8,6 +8,7 @@ import 'package:foodappflutter/controllers/login_controller.dart';
 import 'package:foodappflutter/models/login_response.dart';
 import 'package:foodappflutter/views/auth/login_redirect.dart';
 import 'package:foodappflutter/views/auth/verification_page.dart';
+import 'package:foodappflutter/views/orders/user_orders.dart';
 import 'package:foodappflutter/views/profile/addresses_page.dart';
 import 'package:foodappflutter/views/profile/widget/profile_app_bar.dart';
 import 'package:foodappflutter/views/profile/widget/profile_tile_widget.dart';
@@ -52,7 +53,7 @@ class ProfilePage extends StatelessWidget {
               height: 10.h,
             ),
             Container(
-              height: 200.h,
+              height: 175.h,
               decoration: const BoxDecoration(color: kLightWhite),
               child: ListView(
                 padding: EdgeInsets.zero,
@@ -60,7 +61,9 @@ class ProfilePage extends StatelessWidget {
                 children: [
                   ProfileTileWidget(
                       onTap: () {
-                        Get.to(() => const LoginRedirect());
+                        Get.to(() => const UserOrders(),
+                            transition: Transition.cupertino,
+                            duration: const Duration(milliseconds: 900));
                       },
                       title: "My Orders",
                       icon: Ionicons.fast_food_outline),
@@ -83,7 +86,7 @@ class ProfilePage extends StatelessWidget {
               height: 15.h,
             ),
             Container(
-              height: 200.h,
+              height: 175.h,
               decoration: const BoxDecoration(color: kLightWhite),
               child: ListView(
                 padding: EdgeInsets.zero,

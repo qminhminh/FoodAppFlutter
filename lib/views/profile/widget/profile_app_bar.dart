@@ -39,9 +39,7 @@ class ProfileAppBar extends StatelessWidget {
                   width: 5.w,
                 ),
                 ReusableText(
-                  text: "USA",
-                  style: appStyle(16, kDark, FontWeight.normal),
-                ),
+                    text: "USA", style: appStyle(16, kDark, FontWeight.normal)),
                 SizedBox(
                   width: 5.w,
                 ),

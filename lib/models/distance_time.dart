@@ -3,6 +3,6 @@ class DistanceTime {
   final double distance;
   final double time;
 
-  DistanceTime({required this.price, required this.distance, required this.time});
-
+  DistanceTime(
+      {required this.price, required this.distance, required this.time});
 }

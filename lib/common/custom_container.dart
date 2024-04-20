@@ -5,15 +5,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodappflutter/constants/constants.dart';
 
 class CustomContainer extends StatelessWidget {
-  CustomContainer({super.key, required this.containerContent, this.color});
+  CustomContainer(
+      {super.key,
+      required this.containerContent,
+      this.color,
+      this.containerHieght});
 
   Widget containerContent;
+  double? containerHieght;
   Color? color;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.75,
+      height: containerHieght ?? MediaQuery.of(context).size.height * 0.75,
       child: ClipRRect(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30.r),

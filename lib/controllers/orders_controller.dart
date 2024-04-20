@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_final_fields, avoid_print
+// ignore_for_file: prefer_final_fields
 
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:foodappflutter/constants/constants.dart';
 import 'package:foodappflutter/models/api_eror.dart';

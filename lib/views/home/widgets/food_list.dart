@@ -26,14 +26,13 @@ class FoodsList extends HookWidget {
               children: List.generate(foods.length, (i) {
                 FoodsModel food = foods[i];
                 return FoodWidget(
-                  onTap: () {
-                    Get.to(() => FoodPage(food: food));
-                  },
-                  image: food.imageUrl[0],
-                  title: food.title,
-                  time: food.time,
-                  price: food.price.toStringAsFixed(2),
-                );
+                    onTap: () {
+                      Get.to(() => FoodPage(food: food));
+                    },
+                    image: food.imageUrl[0],
+                    title: food.title,
+                    time: food.time,
+                    price: food.price.toStringAsFixed(2));
               }),
             ),
           );

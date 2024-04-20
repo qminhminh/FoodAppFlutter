@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:foodappflutter/constants/constants.dart';
 import 'package:foodappflutter/controllers/user_location_controller.dart';
@@ -32,13 +33,16 @@ FetchHook useFetchDefault() {
 
       if (response.statusCode == 200) {
         var data = response.body;
+        box.write("defaultAddress", true);
         var decoded = jsonDecode(data);
         addresses.value = AddressResponse.fromJson(decoded);
         controller.setAddress1 = addresses.value!.addressLine1;
       } else {
+        box.write("defaultAddress", false);
         appiError.value = apiErrorFromJson(response.body);
       }
     } catch (e) {
+      box.write("defaultAddress", false);
       error.value = e as Exception;
     } finally {
       isLoading.value = false;

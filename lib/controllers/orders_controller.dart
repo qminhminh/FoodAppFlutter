@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_final_fields
+// ignore_for_file: prefer_final_fields, avoid_print
 
 import 'dart:convert';
 
@@ -99,8 +99,7 @@ class OrdersController extends GetxController {
   void paymentFunction(String payment) async {
     setLoading = true;
 
-    var url = Uri.parse(
-        'https://coursepaymentserver-production.up.railway.app/stripe/create-checkout-session');
+    var url = Uri.parse('$appBaseUrlPayment/stripe/create-checkout-session');
 
     try {
       var response = await http.post(

@@ -20,7 +20,8 @@ const kOffWhite = Color(0xffF3F4F8);
 double height = 825.h;
 double width = 375.w;
 
-const String appBaseUrl = "http://192.168.1.3:3000";
+const String appBaseUrl = "http://192.168.1.9:3000";
+const String appBaseUrlPayment = "http://192.168.1.9:3003";
 
 final List<String> verificationReasons = [
   'Real-time Updates: Get instant notifications about your order status.',

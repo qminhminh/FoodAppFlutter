@@ -24,46 +24,49 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(SearchFoodController());
-    return Obx(() => Scaffold(
-          backgroundColor: kPrimary,
-          appBar: AppBar(
-            toolbarHeight: 74.h,
-            elevation: 0,
-            automaticallyImplyLeading: false,
-            backgroundColor: Colors.white,
-            title: Padding(
-              padding: EdgeInsets.only(top: 12.h),
-              child: CustomTextWidget(
-                controller: _searchController,
-                keyboardType: TextInputType.text,
-                hintText: "Search For Foods",
-                suffixIcon: GestureDetector(
-                    onTap: () {
-                      if (controller.isTriggered == false) {
-                        controller.searchFoods(_searchController.text);
-                        controller.setTrigger = true;
-                      } else {
-                        controller.searchResults = null;
-                        controller.setTrigger = false;
-                        _searchController.clear();
-                      }
-                    },
-                    child: controller.isTriggered == false
-                        ? Icon(Ionicons.search_circle,
-                            size: 40.h, color: kPrimary)
-                        : Icon(Ionicons.close_circle, size: 40.h, color: kRed)),
+    return Obx(
+      () => Scaffold(
+        backgroundColor: kPrimary,
+        appBar: AppBar(
+          toolbarHeight: 74.h,
+          elevation: 0,
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.white,
+          title: Padding(
+            padding: EdgeInsets.only(top: 12.h),
+            child: CustomTextWidget(
+              controller: _searchController,
+              keyboardType: TextInputType.text,
+              hintText: "Search For Foods",
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  if (controller.isTriggered == false) {
+                    controller.searchFoods(_searchController.text);
+                    controller.setTrigger = true;
+                  } else {
+                    controller.searchResults = null;
+                    controller.setTrigger = false;
+                    _searchController.clear();
+                  }
+                },
+                child: controller.isTriggered == false
+                    ? Icon(Ionicons.search_circle, size: 40.h, color: kPrimary)
+                    : Icon(Ionicons.close_circle, size: 40.h, color: kRed),
               ),
             ),
           ),
-          body: SafeArea(
-            child: CustomContainer(
-                color: Colors.white,
-                containerContent: controller.isLoading
-                    ? const FoodsListShimmer()
-                    : controller.searchResults == null
-                        ? const LoadingWidget()
-                        : const SearchResults()),
+        ),
+        body: SafeArea(
+          child: CustomContainer(
+            color: Colors.white,
+            containerContent: controller.isLoading
+                ? const FoodsListShimmer()
+                : controller.searchResults == null
+                    ? const LoadingWidget()
+                    : const SearchResults(),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

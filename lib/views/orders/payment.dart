@@ -89,12 +89,13 @@ class _PaymentWebViewState extends State<PaymentWebView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-          toolbarHeight: 20,
-        ),
-        body: WebViewWidget(controller: _controller));
+        elevation: 0,
+        toolbarHeight: 20,
+      ),
+      body: WebViewWidget(controller: _controller),
+    );
   }
 }

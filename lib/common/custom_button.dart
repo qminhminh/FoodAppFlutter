@@ -24,17 +24,18 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: onTap,
-        child: Container(
-          width: btnWidth ?? width,
-          height: btnHeight ?? 28.h,
-          decoration: BoxDecoration(
-              color: btnColor ?? kPrimary,
-              borderRadius: BorderRadius.circular(radius ?? 9.r)),
-          child: Center(
-              child: ReusableText(
-                  text: text,
-                  style: appStyle(12, kLightWhite, FontWeight.w500))),
-        ));
+      onTap: onTap,
+      child: Container(
+        width: btnWidth ?? width,
+        height: btnHeight ?? 28.h,
+        decoration: BoxDecoration(
+            color: btnColor ?? kPrimary,
+            borderRadius: BorderRadius.circular(radius ?? 9.r)),
+        child: Center(
+          child: ReusableText(
+              text: text, style: appStyle(12, kLightWhite, FontWeight.w500)),
+        ),
+      ),
+    );
   }
 }

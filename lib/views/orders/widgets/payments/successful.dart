@@ -10,8 +10,20 @@ import 'package:foodappflutter/controllers/orders_controller.dart';
 import 'package:foodappflutter/views/entrypoint.dart';
 import 'package:get/get.dart';
 
-class Successful extends StatelessWidget {
+class Successful extends StatefulWidget {
   const Successful({super.key});
+
+  @override
+  State<Successful> createState() => _SuccessfulState();
+}
+
+class _SuccessfulState extends State<Successful> {
+  @override
+  void initState() {
+    super.initState();
+    final orderController = Get.put(OrdersController());
+    orderController.updateSatusPaymentSuccess(orderController.orderId);
+  }
 
   @override
   Widget build(BuildContext context) {

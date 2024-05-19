@@ -125,5 +125,57 @@ class OrdersController extends GetxController {
     }
   }
 
-  //
+  void updateSatusPaymentSuccess(String oderId) async {
+    final box = GetStorage();
+    String accessToken = box.read("token");
+
+    Uri url = Uri.parse(
+        '$appBaseUrl/api/orders/update-payment-status-success/$orderId');
+
+    Map<String, String> headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer $accessToken'
+    };
+
+    try {
+      var response = await http.put(url, headers: headers);
+      if (response.statusCode != 200) {
+        var error = apiErrorFromJson(response.body);
+
+        Get.snackbar("Failed to update payment orders", error.message,
+            colorText: kLightWhite,
+            backgroundColor: kRed,
+            icon: const Icon(Icons.error_outline));
+      }
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
+
+  void updateSatusPaymentFalse(String oderId) async {
+    final box = GetStorage();
+    String accessToken = box.read("token");
+
+    Uri url = Uri.parse(
+        '$appBaseUrl/api/orders/update-payment-status-false/$orderId');
+
+    Map<String, String> headers = {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer $accessToken'
+    };
+
+    try {
+      var response = await http.put(url, headers: headers);
+      if (response.statusCode != 200) {
+        var error = apiErrorFromJson(response.body);
+
+        Get.snackbar("Failed to update payment orders", error.message,
+            colorText: kLightWhite,
+            backgroundColor: kRed,
+            icon: const Icon(Icons.error_outline));
+      }
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 }

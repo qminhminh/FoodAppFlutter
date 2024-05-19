@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final loginModel = loginModelFromJson(jsonString);
-
 // ignore_for_file: depend_on_referenced_packages, unused_import
 
 import 'package:meta/meta.dart';

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_final_fields
+
 import 'package:flutter/material.dart';
 import 'package:foodappflutter/common/app_style.dart';
 import 'package:foodappflutter/constants/constants.dart';

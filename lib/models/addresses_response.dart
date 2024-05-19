@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final addressResponse = addressResponseFromJson(jsonString);
-
 import 'dart:convert';
 
 List<AddressResponse> addressResponseFromJson(String str) =>

@@ -7,8 +7,20 @@ import 'package:foodappflutter/views/entrypoint.dart';
 
 import 'package:get/get.dart';
 
-class PaymentFailed extends StatelessWidget {
+class PaymentFailed extends StatefulWidget {
   const PaymentFailed({super.key});
+
+  @override
+  State<PaymentFailed> createState() => _PaymentFailedState();
+}
+
+class _PaymentFailedState extends State<PaymentFailed> {
+  @override
+  void initState() {
+    super.initState();
+    final orderController = Get.put(OrdersController());
+    orderController.updateSatusPaymentFalse(orderController.orderId);
+  }
 
   @override
   Widget build(BuildContext context) {

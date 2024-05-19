@@ -26,60 +26,63 @@ class HomePage extends StatelessWidget {
           preferredSize: Size.fromHeight(130.h), child: const CustomAppBar()),
       body: SafeArea(
         child: CustomContainer(
-            containerContent: Column(
-          children: [
-            const CategoryList(),
-            Obx(
-              () => controller.categoryValue == ''
-                  ? Column(
-                      children: [
-                        Heading(
-                          text: "Try Something New",
-                          onTap: () {
-                            Get.to(() => const RecommendationsPage(),
-                                transition: Transition.cupertino,
-                                duration: const Duration(milliseconds: 900));
-                          },
+          containerContent: Column(
+            children: [
+              const CategoryList(),
+              Obx(
+                () => controller.categoryValue == ''
+                    ? Column(
+                        children: [
+                          Heading(
+                            text: "Try Something New",
+                            onTap: () {
+                              Get.to(() => const RecommendationsPage(),
+                                  transition: Transition.cupertino,
+                                  duration: const Duration(milliseconds: 900));
+                            },
+                          ),
+                          const FoodsList(),
+                          Heading(
+                            text: "Nearby Restaurants",
+                            onTap: () {
+                              Get.to(() => const AllNearbyRestaurants(),
+                                  transition: Transition.cupertino,
+                                  duration: const Duration(milliseconds: 900));
+                            },
+                          ),
+                          const NearbyRestaurants(),
+                          Heading(
+                            text: "Food closer to you",
+                            onTap: () {
+                              Get.to(() => const AllFastestFoods(),
+                                  transition: Transition.cupertino,
+                                  duration: const Duration(milliseconds: 900));
+                            },
+                          ),
+                          const FoodsList(),
+                        ],
+                      )
+                    : CustomContainer(
+                        containerContent: Column(
+                          children: [
+                            Heading(
+                              more: true,
+                              text: "Explore ${controller.titleValue} Category",
+                              onTap: () {
+                                Get.to(() => const RecommendationsPage(),
+                                    transition: Transition.cupertino,
+                                    duration:
+                                        const Duration(milliseconds: 900));
+                              },
+                            ),
+                            const CategoryFoodsList()
+                          ],
                         ),
-                        const FoodsList(),
-                        Heading(
-                          text: "Nearby Restaurants",
-                          onTap: () {
-                            Get.to(() => const AllNearbyRestaurants(),
-                                transition: Transition.cupertino,
-                                duration: const Duration(milliseconds: 900));
-                          },
-                        ),
-                        const NearbyRestaurants(),
-                        Heading(
-                          text: "Food closer to you",
-                          onTap: () {
-                            Get.to(() => const AllFastestFoods(),
-                                transition: Transition.cupertino,
-                                duration: const Duration(milliseconds: 900));
-                          },
-                        ),
-                        const FoodsList(),
-                      ],
-                    )
-                  : CustomContainer(
-                      containerContent: Column(
-                      children: [
-                        Heading(
-                          more: true,
-                          text: "Explore ${controller.titleValue} Category",
-                          onTap: () {
-                            Get.to(() => const RecommendationsPage(),
-                                transition: Transition.cupertino,
-                                duration: const Duration(milliseconds: 900));
-                          },
-                        ),
-                        const CategoryFoodsList()
-                      ],
-                    )),
-            )
-          ],
-        )),
+                      ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

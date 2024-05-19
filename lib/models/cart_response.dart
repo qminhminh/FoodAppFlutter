@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final cartResponse = cartResponseFromJson(jsonString);
-
 import 'dart:convert';
 
 List<CartResponse> cartResponseFromJson(String str) => List<CartResponse>.from(

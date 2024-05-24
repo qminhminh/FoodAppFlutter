@@ -36,14 +36,14 @@ class RegistrationController extends GetxController {
 
         Get.back();
 
-        Get.snackbar("You are succefully registered", data.message,
+        Get.snackbar("Bạn đang được đăng ký thành công", data.message,
             colorText: kLightWhite,
             backgroundColor: kPrimary,
             icon: const Icon(Ionicons.fast_food_outline));
       } else {
         var error = apiErrorFromJson(response.body);
 
-        Get.snackbar("Failed to register", error.message,
+        Get.snackbar("Đăng kí thất bại", error.message,
             colorText: kLightWhite,
             backgroundColor: kRed,
             icon: const Icon(Icons.error_outline));

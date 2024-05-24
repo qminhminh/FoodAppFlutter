@@ -74,7 +74,7 @@ class _SuccessfulState extends State<Successful> {
                         height: 20.h,
                       ),
                       ReusableText(
-                          text: "Payment Successful",
+                          text: "Thanh toán thành công",
                           style: appStyle(13, kGray, FontWeight.normal)),
                       const Divider(
                         thickness: .2,
@@ -86,7 +86,7 @@ class _SuccessfulState extends State<Successful> {
                           children: [
                             TableRow(children: [
                               ReusableText(
-                                  text: "Order ID",
+                                  text: "ID đặt hàng",
                                   style:
                                       appStyle(11, kGray, FontWeight.normal)),
                               ReusableText(
@@ -96,7 +96,7 @@ class _SuccessfulState extends State<Successful> {
                             ]),
                             TableRow(children: [
                               ReusableText(
-                                  text: "Payment ID",
+                                  text: "ID thanh toán",
                                   style:
                                       appStyle(11, kGray, FontWeight.normal)),
                               ReusableText(
@@ -106,7 +106,7 @@ class _SuccessfulState extends State<Successful> {
                             ]),
                             TableRow(children: [
                               ReusableText(
-                                  text: "Payment Method",
+                                  text: "Phương thức thanh toán",
                                   style:
                                       appStyle(11, kGray, FontWeight.normal)),
                               ReusableText(
@@ -127,7 +127,7 @@ class _SuccessfulState extends State<Successful> {
                             ]),
                             TableRow(children: [
                               ReusableText(
-                                  text: "Restaurant",
+                                  text: "Quán",
                                   style:
                                       appStyle(11, kGray, FontWeight.normal)),
                               ReusableText(
@@ -137,7 +137,7 @@ class _SuccessfulState extends State<Successful> {
                             ]),
                             TableRow(children: [
                               ReusableText(
-                                  text: "Date",
+                                  text: "Ngày",
                                   style:
                                       appStyle(11, kGray, FontWeight.normal)),
                               ReusableText(

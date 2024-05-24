@@ -37,7 +37,7 @@ class _SearchPageState extends State<SearchPage> {
             child: CustomTextWidget(
               controller: _searchController,
               keyboardType: TextInputType.text,
-              hintText: "Search For Foods",
+              hintText: "Tìm kiếm thức uống",
               suffixIcon: GestureDetector(
                 onTap: () {
                   if (controller.isTriggered == false) {

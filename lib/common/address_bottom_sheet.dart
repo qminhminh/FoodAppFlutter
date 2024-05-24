@@ -35,8 +35,9 @@ Future<dynamic> showAddressSheet(BuildContext context) {
                   height: 10.h,
                 ),
                 ReusableText(
-                    text: "Add Address",
-                    style: appStyle(18, kPrimary, FontWeight.w600)),
+                  text: "Thêm địa chỉ",
+                  style: appStyle(18, kPrimary, FontWeight.w600),
+                ),
                 SizedBox(
                     height: 250.h,
                     child: Column(
@@ -59,7 +60,7 @@ Future<dynamic> showAddressSheet(BuildContext context) {
                   height: 10.h,
                 ),
                 CustomButton(
-                  text: "Go to add adress",
+                  text: "Đi để thêm địa chỉ",
                   btnHeight: 35.h,
                   onTap: () {
                     Get.to(() => const ShippingAddress());

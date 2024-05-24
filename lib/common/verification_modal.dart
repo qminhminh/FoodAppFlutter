@@ -35,7 +35,7 @@ Future<dynamic> showVerificationSheet(BuildContext context) {
                   height: 10.h,
                 ),
                 ReusableText(
-                    text: "Verify Your Phone Number",
+                    text: "Xác minh số điện thoại của bạn",
                     style: appStyle(18, kPrimary, FontWeight.w600)),
                 SizedBox(
                     height: 250.h,
@@ -59,7 +59,7 @@ Future<dynamic> showVerificationSheet(BuildContext context) {
                   height: 10.h,
                 ),
                 CustomButton(
-                  text: "Verify  Phone Number",
+                  text: "Xác minh số điện thoại",
                   btnHeight: 35.h,
                   onTap: () {
                     Get.to(() => const PhoneVerificationPage());

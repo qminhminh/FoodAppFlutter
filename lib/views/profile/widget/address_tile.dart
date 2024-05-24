@@ -34,7 +34,7 @@ class AddressTile extends StatelessWidget {
               text: address.postalCode,
               style: appStyle(11, kGray, FontWeight.w500)),
           ReusableText(
-              text: "Tap to set address as default",
+              text: "Nhấn để đặt địa chỉ làm mặc định",
               style: appStyle(8, kGray, FontWeight.w500)),
         ],
       ),

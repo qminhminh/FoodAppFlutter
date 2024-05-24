@@ -25,7 +25,7 @@ class RecommendationsPage extends HookWidget {
         elevation: 0,
         backgroundColor: kSecondary,
         title: ReusableText(
-            text: "Recommendations",
+            text: "khuyến nghị",
             style: appStyle(13, kLightWhite, FontWeight.w600)),
       ),
       body: BackGroundContainer(

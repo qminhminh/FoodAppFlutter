@@ -78,8 +78,8 @@ class CartController extends GetxController {
       if (response.statusCode == 200) {
         setLoading = false;
         refetch();
-        Get.snackbar(
-            "Product removed successfully", "Enjoy your awesome experience",
+        Get.snackbar("Sản phẩm đã loại bỏ thành công",
+            "Tận hưởng trải nghiệm tuyệt vời của bạn",
             colorText: kLightWhite,
             backgroundColor: kPrimary,
             icon: const Icon(
@@ -89,7 +89,7 @@ class CartController extends GetxController {
       } else {
         var error = apiErrorFromJson(response.body);
 
-        Get.snackbar("Error", error.message,
+        Get.snackbar("Lỗi", error.message,
             colorText: kLightWhite,
             backgroundColor: kRed,
             icon: const Icon(

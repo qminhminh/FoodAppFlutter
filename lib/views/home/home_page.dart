@@ -23,7 +23,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: kPrimary,
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(130.h), child: const CustomAppBar()),
+        preferredSize: Size.fromHeight(130.h),
+        child: const CustomAppBar(),
+      ),
       body: SafeArea(
         child: CustomContainer(
           containerContent: Column(
@@ -34,29 +36,35 @@ class HomePage extends StatelessWidget {
                     ? Column(
                         children: [
                           Heading(
-                            text: "Try Something New",
+                            text: "Hãy thử một cái gì đó mới",
                             onTap: () {
-                              Get.to(() => const RecommendationsPage(),
-                                  transition: Transition.cupertino,
-                                  duration: const Duration(milliseconds: 900));
+                              Get.to(
+                                () => const RecommendationsPage(),
+                                transition: Transition.cupertino,
+                                duration: const Duration(milliseconds: 900),
+                              );
                             },
                           ),
                           const FoodsList(),
                           Heading(
-                            text: "Nearby Restaurants",
+                            text: "Quán nước gần đó",
                             onTap: () {
-                              Get.to(() => const AllNearbyRestaurants(),
-                                  transition: Transition.cupertino,
-                                  duration: const Duration(milliseconds: 900));
+                              Get.to(
+                                () => const AllNearbyRestaurants(),
+                                transition: Transition.cupertino,
+                                duration: const Duration(milliseconds: 900),
+                              );
                             },
                           ),
                           const NearbyRestaurants(),
                           Heading(
-                            text: "Food closer to you",
+                            text: "Nước uống gần bạn hơn",
                             onTap: () {
-                              Get.to(() => const AllFastestFoods(),
-                                  transition: Transition.cupertino,
-                                  duration: const Duration(milliseconds: 900));
+                              Get.to(
+                                () => const AllFastestFoods(),
+                                transition: Transition.cupertino,
+                                duration: const Duration(milliseconds: 900),
+                              );
                             },
                           ),
                           const FoodsList(),
@@ -67,12 +75,13 @@ class HomePage extends StatelessWidget {
                           children: [
                             Heading(
                               more: true,
-                              text: "Explore ${controller.titleValue} Category",
+                              text: "Khám phá ${controller.titleValue} Loại",
                               onTap: () {
-                                Get.to(() => const RecommendationsPage(),
-                                    transition: Transition.cupertino,
-                                    duration:
-                                        const Duration(milliseconds: 900));
+                                Get.to(
+                                  () => const RecommendationsPage(),
+                                  transition: Transition.cupertino,
+                                  duration: const Duration(milliseconds: 900),
+                                );
                               },
                             ),
                             const CategoryFoodsList()

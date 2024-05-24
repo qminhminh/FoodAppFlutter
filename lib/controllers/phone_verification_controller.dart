@@ -55,8 +55,8 @@ class PhoneVerificationController extends GetxController {
         box.write("userId", data.id);
         box.write("verification", data.verification);
 
-        Get.snackbar(
-            "You are succefully verified", "Enjoy your awesome experience",
+        Get.snackbar("Bạn đang được xác minh một cách thành công",
+            "Hãy tận hưởng trải nghiệm tuyệt vời của bạn",
             colorText: kLightWhite,
             backgroundColor: kPrimary,
             icon: const Icon(Ionicons.fast_food_outline));
@@ -66,7 +66,7 @@ class PhoneVerificationController extends GetxController {
       } else {
         var error = apiErrorFromJson(response.body);
 
-        Get.snackbar("Failed to verify account", error.message,
+        Get.snackbar("Không xác minh tài khoản", error.message,
             colorText: kLightWhite,
             backgroundColor: kRed,
             icon: const Icon(Icons.error_outline));

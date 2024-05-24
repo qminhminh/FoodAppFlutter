@@ -28,7 +28,7 @@ class Addresses extends HookWidget {
         elevation: 0,
         backgroundColor: kOffWhite,
         title: ReusableText(
-          text: "Addresses",
+          text: "Địa chỉ",
           style: appStyle(13, kGray, FontWeight.w600),
         ),
       ),
@@ -50,7 +50,7 @@ class Addresses extends HookWidget {
                   onTap: () {
                     Get.to(() => const ShippingAddress());
                   },
-                  text: "Add Address",
+                  text: "Thêm địa chỉ",
                 ),
               ),
             )

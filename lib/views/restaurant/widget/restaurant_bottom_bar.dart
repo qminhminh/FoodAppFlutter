@@ -44,7 +44,7 @@ class RestaurantBottomBar extends StatelessWidget {
             },
             btnColor: kSecondary,
             btnWidth: width / 3,
-            text: "Rate Restaurant",
+            text: "Đánh giá nhà hàng",
           )
         ],
       ),

@@ -17,60 +17,69 @@ class PasswordTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final passwordController = Get.put(PasswordController());
-    return Obx(() => TextFormField(
-          cursorColor: kDark,
-          textInputAction: TextInputAction.next,
-          keyboardType: TextInputType.visiblePassword,
-          controller: controller,
-          obscureText: passwordController.password,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return "Please enter valid password";
-            } else {
-              return null;
-            }
-          },
-          style: appStyle(12, kDark, FontWeight.normal),
-          decoration: InputDecoration(
-              hintText: "Password",
-              prefixIcon: const Icon(
-                CupertinoIcons.lock_circle,
-                size: 26,
-                color: kGrayLight,
-              ),
-              suffixIcon: GestureDetector(
-                onTap: () {
-                  passwordController.setPassword = !passwordController.password;
-                },
-                child: Icon(
-                  passwordController.password
-                      ? Icons.visibility
-                      : Icons.visibility_off,
-                  size: 26,
-                  color: kGrayLight,
-                ),
-              ),
-              isDense: true,
-              contentPadding: EdgeInsets.all(6.h),
-              hintStyle: appStyle(12, kGray, FontWeight.normal),
-              errorBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: kRed, width: .5),
-                  borderRadius: BorderRadius.all(Radius.circular(12.r))),
-              focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: kPrimary, width: .5),
-                  borderRadius: BorderRadius.all(Radius.circular(12.r))),
-              focusedErrorBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: kRed, width: .5),
-                  borderRadius: BorderRadius.all(Radius.circular(12.r))),
-              disabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: kGray, width: .5),
-                  borderRadius: BorderRadius.all(Radius.circular(12.r))),
-              enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: kPrimary, width: .5),
-                  borderRadius: BorderRadius.all(Radius.circular(12.r))),
-              border: OutlineInputBorder(
-                  borderSide: const BorderSide(color: kPrimary, width: .5),
-                  borderRadius: BorderRadius.all(Radius.circular(12.r)))),
-        ));
+    return Obx(
+      () => TextFormField(
+        cursorColor: kDark,
+        textInputAction: TextInputAction.next,
+        keyboardType: TextInputType.visiblePassword,
+        controller: controller,
+        obscureText: passwordController.password,
+        validator: (value) {
+          if (value!.isEmpty) {
+            return "Vui lòng nhập mật khẩu hợp lệ";
+          } else {
+            return null;
+          }
+        },
+        style: appStyle(12, kDark, FontWeight.normal),
+        decoration: InputDecoration(
+          hintText: "Mật khẩu",
+          prefixIcon: const Icon(
+            CupertinoIcons.lock_circle,
+            size: 26,
+            color: kGrayLight,
+          ),
+          suffixIcon: GestureDetector(
+            onTap: () {
+              passwordController.setPassword = !passwordController.password;
+            },
+            child: Icon(
+              passwordController.password
+                  ? Icons.visibility
+                  : Icons.visibility_off,
+              size: 26,
+              color: kGrayLight,
+            ),
+          ),
+          isDense: true,
+          contentPadding: EdgeInsets.all(6.h),
+          hintStyle: appStyle(12, kGray, FontWeight.normal),
+          errorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: kRed, width: .5),
+            borderRadius: BorderRadius.all(Radius.circular(12.r)),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: kPrimary, width: .5),
+            borderRadius: BorderRadius.all(Radius.circular(12.r)),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: kRed, width: .5),
+            borderRadius: BorderRadius.all(Radius.circular(12.r)),
+          ),
+          disabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: kGray, width: .5),
+            borderRadius: BorderRadius.all(Radius.circular(12.r)),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: const BorderSide(color: kPrimary, width: .5),
+            borderRadius: BorderRadius.all(Radius.circular(12.r)),
+          ),
+          border: OutlineInputBorder(
+            borderSide: const BorderSide(color: kPrimary, width: .5),
+            borderRadius: BorderRadius.all(Radius.circular(12.r)),
+          ),
+        ),
+      ),
+    );
   }
 }

@@ -63,21 +63,21 @@ class _RestaurantPageState extends State<RestaurantPage>
               child: Column(
                 children: [
                   const RowText(
-                    first: "Distance to Restaurant",
+                    first: "Khoảng cách đến nhà hàng",
                     second: "2.7 km",
                   ),
                   SizedBox(
                     height: 3.h,
                   ),
                   const RowText(
-                    first: "Estimated Price",
+                    first: "Giá ước tính",
                     second: "\$2.7",
                   ),
                   SizedBox(
                     height: 3.h,
                   ),
                   const RowText(
-                    first: "Estimated Time",
+                    first: "Thơi gian dự định",
                     second: "30 min",
                   ),
                   const Divider(
@@ -109,7 +109,7 @@ class _RestaurantPageState extends State<RestaurantPage>
                           width: width / 2,
                           height: 25,
                           child: const Center(
-                            child: Text("Menu"),
+                            child: Text("Thực đơn"),
                           ),
                         ),
                       ),
@@ -118,7 +118,7 @@ class _RestaurantPageState extends State<RestaurantPage>
                           width: width / 2,
                           height: 25,
                           child: const Center(
-                            child: Text("Explore"),
+                            child: Text("Khám phá"),
                           ),
                         ),
                       ),

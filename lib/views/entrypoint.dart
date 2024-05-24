@@ -58,19 +58,19 @@ class MainScreen extends HookWidget {
                         icon: controller.tabIndex == 0
                             ? const Icon(AntDesign.appstore1)
                             : const Icon(AntDesign.appstore_o),
-                        label: 'Home'),
+                        label: 'Trang chủ'),
                     const BottomNavigationBarItem(
-                        icon: Icon(Icons.search), label: 'Search'),
+                        icon: Icon(Icons.search), label: 'Tìm kiếm'),
                     const BottomNavigationBarItem(
                         icon: Badge(
                             label: Text('1'),
                             child: Icon(FontAwesome.opencart)),
-                        label: 'Cart'),
+                        label: 'Xe đẩy'),
                     BottomNavigationBarItem(
                         icon: controller.tabIndex == 3
                             ? const Icon(FontAwesome.user_circle)
                             : const Icon(FontAwesome.user_circle_o),
-                        label: 'Profile'),
+                        label: 'Hồ sơ'),
                   ],
                 ),
               ),

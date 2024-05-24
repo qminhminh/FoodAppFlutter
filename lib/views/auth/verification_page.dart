@@ -22,64 +22,68 @@ class VerificationPage extends StatelessWidget {
       backgroundColor: kPrimary,
       appBar: AppBar(
         title: ReusableText(
-            text: "Please Verify Your Account",
-            style: appStyle(12, kGray, FontWeight.w600)),
+          text: "Hãy xác thực tài khoản của bạn",
+          style: appStyle(12, kGray, FontWeight.w600),
+        ),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
       ),
       body: CustomContainer(
-          color: Colors.white,
-          containerContent: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: SizedBox(
-              height: height,
-              child: ListView(
-                padding: EdgeInsets.zero,
-                children: [
-                  Lottie.asset("assets/anime/delivery.json"),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  ReusableText(
-                      text: "Verify Your Account",
-                      style: appStyle(20, kPrimary, FontWeight.w600)),
-                  SizedBox(
-                    height: 5.h,
-                  ),
-                  Text(
-                      "Enter the 6-digit code sent to your email, if you don't see the code, please check your spam folder. ",
-                      textAlign: TextAlign.justify,
-                      style: appStyle(10, kGray, FontWeight.normal)),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  OtpTextField(
-                    numberOfFields: 6,
-                    borderColor: kPrimary,
-                    borderWidth: 2.0,
-                    textStyle: appStyle(17, kDark, FontWeight.w600),
-                    onCodeChanged: (String code) {},
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    onSubmit: (String verificationCode) {
-                      controller.setCode = verificationCode;
-                    },
-                  ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  CustomButton(
-                    text: "V E R I F Y   A C C O U N T",
-                    onTap: () {
-                      controller.verificationFunction();
-                    },
-                    btnHeight: 35.h,
-                    btnWidth: width,
-                  ),
-                ],
-              ),
+        color: Colors.white,
+        containerContent: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          child: SizedBox(
+            height: height,
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                Lottie.asset("assets/anime/delivery.json"),
+                SizedBox(
+                  height: 10.h,
+                ),
+                ReusableText(
+                  text: "Xác thực tài khoản của bạn",
+                  style: appStyle(20, kPrimary, FontWeight.w600),
+                ),
+                SizedBox(
+                  height: 5.h,
+                ),
+                Text(
+                  "Nhập mã 6 chữ số được gửi đến email của bạn, nếu bạn không thấy mã, vui lòng kiểm tra thư mục spam của bạn.",
+                  textAlign: TextAlign.justify,
+                  style: appStyle(10, kGray, FontWeight.normal),
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                OtpTextField(
+                  numberOfFields: 6,
+                  borderColor: kPrimary,
+                  borderWidth: 2.0,
+                  textStyle: appStyle(17, kDark, FontWeight.w600),
+                  onCodeChanged: (String code) {},
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  onSubmit: (String verificationCode) {
+                    controller.setCode = verificationCode;
+                  },
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                CustomButton(
+                  text: "XÁC NHẬN TÀI KHOẢN",
+                  onTap: () {
+                    controller.verificationFunction();
+                  },
+                  btnHeight: 35.h,
+                  btnWidth: width,
+                ),
+              ],
             ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }

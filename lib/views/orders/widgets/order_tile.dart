@@ -79,7 +79,7 @@ class OrderTile extends StatelessWidget {
                       style: appStyle(11, kDark, FontWeight.w400),
                     ),
                     ReusableText(
-                      text: "Delivery time: ${food.time}",
+                      text: "Thời gian giao hàng: ${food.time}",
                       style: appStyle(11, kGray, FontWeight.w400),
                     ),
                     SizedBox(

@@ -79,7 +79,7 @@ class ClientOrderTile extends StatelessWidget {
                       style: appStyle(11, kDark, FontWeight.w400),
                     ),
                     ReusableText(
-                      text: "Qauntity: ${food.quantity}",
+                      text: "Số lượng: ${food.quantity}",
                       style: appStyle(11, kGray, FontWeight.w600),
                     ),
                     SizedBox(

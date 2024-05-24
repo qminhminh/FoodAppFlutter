@@ -23,7 +23,7 @@ class AllCategories extends HookWidget {
         elevation: 0,
         backgroundColor: kOffWhite,
         title: ReusableText(
-            text: "Categories", style: appStyle(12, kGray, FontWeight.w600)),
+            text: "Thể loại", style: appStyle(12, kGray, FontWeight.w600)),
       ),
       body: BackGroundContainer(
         color: Colors.white,

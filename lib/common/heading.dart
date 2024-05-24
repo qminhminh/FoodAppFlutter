@@ -21,7 +21,9 @@ class Heading extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: 10.h),
             child: ReusableText(
-                text: text, style: appStyle(16, kDark, FontWeight.bold)),
+              text: text,
+              style: appStyle(16, kDark, FontWeight.bold),
+            ),
           ),
           more == null
               ? GestureDetector(

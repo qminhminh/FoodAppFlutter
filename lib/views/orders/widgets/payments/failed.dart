@@ -51,7 +51,7 @@ class _PaymentFailedState extends State<PaymentFailed> {
               color: Colors.red,
             ),
             ReusableText(
-                text: "Payment Failed",
+                text: "Thanh toán không thành công",
                 style: appStyle(28, Colors.black, FontWeight.bold))
           ],
         ),

@@ -142,7 +142,7 @@ class OrdersController extends GetxController {
       if (response.statusCode != 200) {
         var error = apiErrorFromJson(response.body);
 
-        Get.snackbar("Failed to update payment orders", error.message,
+        Get.snackbar("Không cập nhật đơn đặt hàng thanh toán", error.message,
             colorText: kLightWhite,
             backgroundColor: kRed,
             icon: const Icon(Icons.error_outline));
@@ -169,7 +169,7 @@ class OrdersController extends GetxController {
       if (response.statusCode != 200) {
         var error = apiErrorFromJson(response.body);
 
-        Get.snackbar("Failed to update payment orders", error.message,
+        Get.snackbar("Không cập nhật đơn đặt hàng thanh toán", error.message,
             colorText: kLightWhite,
             backgroundColor: kRed,
             icon: const Icon(Icons.error_outline));

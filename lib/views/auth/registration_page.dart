@@ -46,7 +46,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
         backgroundColor: kPrimary,
         title: Center(
           child: ReusableText(
-              text: "Foodly Family",
+              text: "Đồ uống",
               style: appStyle(20, kLightWhite, FontWeight.bold)),
         ),
       ),
@@ -69,7 +69,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 child: Column(
                   children: [
                     EmailTextField(
-                      hintText: "Username",
+                      hintText: "Tên tài khoản",
                       keyboardType: TextInputType.text,
                       prefixIcon: const Icon(
                         CupertinoIcons.profile_circled,
@@ -82,7 +82,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       height: 25.h,
                     ),
                     EmailTextField(
-                      hintText: "Email",
+                      hintText: "E-mail",
                       prefixIcon: const Icon(
                         CupertinoIcons.mail,
                         size: 22,
@@ -100,7 +100,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                       height: 30.h,
                     ),
                     CustomButton(
-                      text: "R E G I S T E R",
+                      text: "ĐĂNG KÝ",
                       onTap: () {
                         if (_emailController.text.isNotEmpty &&
                             _userController.text.isNotEmpty &&

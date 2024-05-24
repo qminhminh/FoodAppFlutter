@@ -51,28 +51,29 @@ class CartPage extends HookWidget {
         elevation: 0,
         backgroundColor: kOffWhite,
         title: ReusableText(
-            text: "Cart", style: appStyle(14, kGray, FontWeight.w600)),
+          text: "Xe đẩy",
+          style: appStyle(14, kGray, FontWeight.w600),
+        ),
       ),
       body: SafeArea(
         child: CustomContainer(
-            containerContent: isLoading
-                ? const FoodsListShimmer()
-                : Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12.w),
-                    child: SizedBox(
-                      width: width,
-                      height: height,
-                      child: ListView.builder(
-                          itemCount: carts.length,
-                          itemBuilder: (context, i) {
-                            var cart = carts[i];
-                            return CartTile(
-                                refetch: refetch,
-                                color: kLightWhite,
-                                cart: cart);
-                          }),
-                    ),
-                  )),
+          containerContent: isLoading
+              ? const FoodsListShimmer()
+              : Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 12.w),
+                  child: SizedBox(
+                    width: width,
+                    height: height,
+                    child: ListView.builder(
+                        itemCount: carts.length,
+                        itemBuilder: (context, i) {
+                          var cart = carts[i];
+                          return CartTile(
+                              refetch: refetch, color: kLightWhite, cart: cart);
+                        }),
+                  ),
+                ),
+        ),
       ),
     );
   }

@@ -31,36 +31,43 @@ class EmailTextField extends StatelessWidget {
       controller: controller,
       validator: (value) {
         if (value!.isEmpty) {
-          return "Please enter valid data";
+          return "Vui lòng nhập dữ liệu hợp lệ";
         } else {
           return null;
         }
       },
       style: appStyle(12, kDark, FontWeight.normal),
       decoration: InputDecoration(
-          hintText: hintText,
-          prefixIcon: prefixIcon,
-          isDense: true,
-          contentPadding: EdgeInsets.all(6.h),
-          hintStyle: appStyle(12, kGray, FontWeight.normal),
-          errorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: kRed, width: .5),
-              borderRadius: BorderRadius.all(Radius.circular(12.r))),
-          focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: kPrimary, width: .5),
-              borderRadius: BorderRadius.all(Radius.circular(12.r))),
-          focusedErrorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: kRed, width: .5),
-              borderRadius: BorderRadius.all(Radius.circular(12.r))),
-          disabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: kGray, width: .5),
-              borderRadius: BorderRadius.all(Radius.circular(12.r))),
-          enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: kPrimary, width: .5),
-              borderRadius: BorderRadius.all(Radius.circular(12.r))),
-          border: OutlineInputBorder(
-              borderSide: const BorderSide(color: kPrimary, width: .5),
-              borderRadius: BorderRadius.all(Radius.circular(12.r)))),
+        hintText: hintText,
+        prefixIcon: prefixIcon,
+        isDense: true,
+        contentPadding: EdgeInsets.all(6.h),
+        hintStyle: appStyle(12, kGray, FontWeight.normal),
+        errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: kRed, width: .5),
+          borderRadius: BorderRadius.all(Radius.circular(12.r)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: kPrimary, width: .5),
+          borderRadius: BorderRadius.all(Radius.circular(12.r)),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: kRed, width: .5),
+          borderRadius: BorderRadius.all(Radius.circular(12.r)),
+        ),
+        disabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: kGray, width: .5),
+          borderRadius: BorderRadius.all(Radius.circular(12.r)),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: kPrimary, width: .5),
+          borderRadius: BorderRadius.all(Radius.circular(12.r)),
+        ),
+        border: OutlineInputBorder(
+          borderSide: const BorderSide(color: kPrimary, width: .5),
+          borderRadius: BorderRadius.all(Radius.circular(12.r)),
+        ),
+      ),
     );
   }
 }

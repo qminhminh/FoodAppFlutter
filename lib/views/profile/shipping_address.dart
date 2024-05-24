@@ -120,7 +120,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
       appBar: AppBar(
         backgroundColor: kOffWhite,
         elevation: 0,
-        title: const Text('Shipping Address'),
+        title: const Text('Địa chỉ giao hàng'),
         leading: Obx(
           () => Padding(
             padding: EdgeInsets.only(right: 0.w),
@@ -225,7 +225,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                         controller: _searchController,
                         onChanged: _onSearchChanged,
                         decoration: const InputDecoration(
-                          hintText: "Search for your address ...",
+                          hintText: "Tìm kiếm địa chỉ của bạn ...",
                         ),
                       ),
                     ),
@@ -268,7 +268,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                   ),
                   EmailTextField(
                     controller: _searchController,
-                    hintText: "Address",
+                    hintText: "T",
                     prefixIcon: const Icon(Ionicons.location_sharp),
                     keyboardType: TextInputType.number,
                   ),
@@ -277,7 +277,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                   ),
                   EmailTextField(
                     controller: _postalCode,
-                    hintText: "Postal Code",
+                    hintText: "Mã bưu điện",
                     prefixIcon: const Icon(Ionicons.location_sharp),
                     keyboardType: TextInputType.number,
                   ),
@@ -286,7 +286,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                   ),
                   EmailTextField(
                     controller: _instructions,
-                    hintText: "Delivery Instructions",
+                    hintText: "Hướng dẫn giao hàng",
                     prefixIcon: const Icon(Ionicons.add_circle),
                     keyboardType: TextInputType.number,
                   ),
@@ -299,15 +299,17 @@ class _ShippingAddressState extends State<ShippingAddress> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ReusableText(
-                            text: "Set address as default",
+                            text: "Đặt địa chỉ làm mặc định",
                             style: appStyle(12, kDark, FontWeight.w600)),
-                        Obx(() => CupertinoSwitch(
-                            thumbColor: kSecondary,
-                            trackColor: kPrimary,
-                            value: locationController.isDefault,
-                            onChanged: (value) {
-                              locationController.setIsDefault = value;
-                            }))
+                        Obx(
+                          () => CupertinoSwitch(
+                              thumbColor: kSecondary,
+                              trackColor: kPrimary,
+                              value: locationController.isDefault,
+                              onChanged: (value) {
+                                locationController.setIsDefault = value;
+                              }),
+                        )
                       ],
                     ),
                   ),
@@ -333,7 +335,7 @@ class _ShippingAddressState extends State<ShippingAddress> {
                         }
                       },
                       btnHeight: 45,
-                      text: "S U B M I T")
+                      text: "NỘP"),
                 ],
               ),
             ),

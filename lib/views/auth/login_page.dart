@@ -47,8 +47,9 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: kPrimary,
         title: Center(
           child: ReusableText(
-              text: "Foodly Family",
-              style: appStyle(20, kLightWhite, FontWeight.bold)),
+            text: "Đồ uống",
+            style: appStyle(20, kLightWhite, FontWeight.bold),
+          ),
         ),
       ),
       body: BackGroundContainer(
@@ -70,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   children: [
                     EmailTextField(
-                      hintText: "Email",
+                      hintText: "E-mail",
                       prefixIcon: const Icon(
                         CupertinoIcons.mail,
                         size: 22,
@@ -90,16 +91,17 @@ class _LoginPageState extends State<LoginPage> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           GestureDetector(
-                              onTap: () {
-                                Get.to(() => const RegistrationPage(),
-                                    transition: Transition.fadeIn,
-                                    duration:
-                                        const Duration(milliseconds: 1200));
-                              },
-                              child: ReusableText(
-                                  text: "Register",
-                                  style: appStyle(
-                                      12, Colors.blue, FontWeight.normal))),
+                            onTap: () {
+                              Get.to(() => const RegistrationPage(),
+                                  transition: Transition.fadeIn,
+                                  duration: const Duration(milliseconds: 1200));
+                            },
+                            child: ReusableText(
+                              text: "Đăng ký",
+                              style:
+                                  appStyle(12, Colors.blue, FontWeight.normal),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -107,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 30.h,
                     ),
                     CustomButton(
-                      text: "L O G I N",
+                      text: "ĐĂNG NHẬP",
                       onTap: () {
                         if (_emailController.text.isNotEmpty &&
                             _passwordController.text.length >= 8) {

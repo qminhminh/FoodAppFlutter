@@ -29,11 +29,14 @@ class CustomButton extends StatelessWidget {
         width: btnWidth ?? width,
         height: btnHeight ?? 28.h,
         decoration: BoxDecoration(
-            color: btnColor ?? kPrimary,
-            borderRadius: BorderRadius.circular(radius ?? 9.r)),
+          color: btnColor ?? kPrimary,
+          borderRadius: BorderRadius.circular(radius ?? 9.r),
+        ),
         child: Center(
           child: ReusableText(
-              text: text, style: appStyle(12, kLightWhite, FontWeight.w500)),
+            text: text,
+            style: appStyle(12, kLightWhite, FontWeight.w500),
+          ),
         ),
       ),
     );

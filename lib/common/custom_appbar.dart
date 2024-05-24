@@ -55,7 +55,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   radius: 22.r,
                   backgroundColor: kSecondary,
                   backgroundImage: const NetworkImage(
-                      'https://d326fntlu7tb1e.cloudfront.net/uploads/bdec9d7d-0544-4fc4-823d-3b898f6dbbbf-vinci_03.jpeg'),
+                      'https://res.cloudinary.com/dp2bicmif/image/upload/v1716555530/yxi1fcm3sm4i9imcnr60.png'),
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 6.h, left: 8.w),
@@ -64,20 +64,20 @@ class _CustomAppBarState extends State<CustomAppBar> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       ReusableText(
-                          text: "Deliver to",
+                          text: "Giao hàng đến",
                           style: appStyle(13, kSecondary, FontWeight.w600)),
                       Obx(
                         () => SizedBox(
                           width: width * 0.65,
                           child: Text(
-                              controller.address1 == ""
-                                  ? controller.address == ''
-                                      ? "Please enable location services to get your address"
-                                      : controller.address
-                                  : controller.address1,
-                              overflow: TextOverflow.ellipsis,
-                              style:
-                                  appStyle(11, kGrayLight, FontWeight.normal)),
+                            controller.address1 == ""
+                                ? controller.address == ''
+                                    ? "Vui lòng bật Dịch vụ Vị trí"
+                                    : controller.address
+                                : controller.address1,
+                            overflow: TextOverflow.ellipsis,
+                            style: appStyle(11, kGrayLight, FontWeight.normal),
+                          ),
                         ),
                       )
                     ],
@@ -118,20 +118,20 @@ class _CustomAppBarState extends State<CustomAppBar> {
       // Location services are not enabled don't continue
       // accessing the position and request users of the
       // App to enable the location services.
-      return Future.error('Location services are disabled.');
+      return Future.error('Dịch vụ vị trí bị vô hiệu hóa.');
     }
 
     permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-        return Future.error('Location permissions are denied');
+        return Future.error('Quyền vị trí bị từ chối ');
       }
     }
     if (permission == LocationPermission.deniedForever) {
       // Permissions are denied forever, handle appropriately.
       return Future.error(
-          'Location permissions are permanently denied, we cannot request permissions.');
+          'Quyền vị trí bị từ chối vĩnh viễn, chúng tôi không thể yêu cầu quyền.');
     }
     _getCurentLocation();
     // When we reach here, permissions are granted and we can

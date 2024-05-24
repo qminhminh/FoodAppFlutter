@@ -24,7 +24,7 @@ class AllFastestFoods extends HookWidget {
         elevation: 0,
         backgroundColor: kSecondary,
         title: ReusableText(
-            text: "Fastest Foods",
+            text: "Đồ uống nhanh nhất",
             style: appStyle(13, kLightWhite, FontWeight.w600)),
       ),
       body: BackGroundContainer(

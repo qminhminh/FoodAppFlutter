@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 String googleApiKey = 'AIzaSyDuDxriw8CH8NbVLiXtKFQ2Nb64AoRSdyg';
 
-const kPrimary = Color(0xFF30b9b2);
+const kPrimary = Color.fromARGB(255, 240, 185, 96);
 const kPrimaryLight = Color(0xFF40F3EA);
-const kSecondary = Color(0xffffa44f);
+const kSecondary = Color.fromARGB(255, 48, 24, 2);
 const kSecondaryLight = Color(0xFFffe5db);
 const kTertiary = Color(0xff0078a6);
 const kGray = Color(0xff83829A);
@@ -24,23 +24,22 @@ const String appBaseUrl = "http://192.168.1.9:3000";
 const String appBaseUrlPayment = "http://192.168.1.9:3003";
 
 final List<String> verificationReasons = [
-  'Real-time Updates: Get instant notifications about your order status.',
-  'Direct Communication: A verified number ensures seamless communication.',
-  'Enhanced Security: Protect your account and confirm orders securely.',
-  'Effortless Rescheduling: Easily address issues with a quick call.',
+  'Cập nhật thời gian thực: Nhận thông báo tức thì về trạng thái đơn đặt hàng của bạn.',
+  'Giao tiếp trực tiếp: Một số được xác minh đảm bảo giao tiếp liền mạch.',
+  'Bảo mật nâng cao: Bảo vệ tài khoản của bạn và xác nhận đơn đặt hàng một cách an toàn.',
+  'Sắp xếp lại dễ dàng: dễ dàng giải quyết các vấn đề với một cuộc gọi nhanh.',
 ];
 List<String> orderList = [
-  "Pending",
-  "Preparing",
-  "Delivering",
-  "Delivered",
-  "Cancelled",
+  "Chưa giải quyết",
+  "Chuẩn bị",
+  "Giao hàng",
+  "Đã giao hàng",
+  "Bị hủy bỏ",
 ];
 
 List<String> reasonsToAddAddress = [
-  "Ensures that food orders are delivered accurately to the customer’s location.",
-  "Allows users to check if the delivery service is available in their area.",
-  "Provides a personalized experience by showing nearby restaurants, estimated delivery times, and special offers.",
-  "Streamlines the checkout process by saving addresses for quicker order placement.",
-  "Enables management of multiple addresses (e.g., home, work) for easy switching.",
+  "Đảm bảo rằng các đơn đặt hàng thực phẩm được giao chính xác đến vị trí của khách hàng.",
+  "Cho phép người dùng kiểm tra xem dịch vụ giao hàng có sẵn trong khu vực của họ không.",
+  "Đo lường quy trình thanh toán bằng cách lưu địa chỉ để đặt hàng nhanh hơn.",
+  "Cho phép quản lý nhiều địa chỉ (ví dụ: nhà, công việc) để dễ dàng chuyển đổi.",
 ];

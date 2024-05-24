@@ -134,7 +134,7 @@ class _FoodPageState extends State<FoodPage> {
                           ));
                     },
                     btnWidth: 120.w,
-                    text: "Open Restaurant",
+                    text: "Mở quán",
                   ),
                 ),
               ],
@@ -152,13 +152,15 @@ class _FoodPageState extends State<FoodPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ReusableText(
-                        text: widget.food.title,
-                        style: appStyle(18, kDark, FontWeight.w600)),
+                      text: widget.food.title,
+                      style: appStyle(18, kDark, FontWeight.w600),
+                    ),
                     Obx(
                       () => ReusableText(
-                          text:
-                              "\$ ${((widget.food.price + controller.additivePrice) * controller.count.value)}",
-                          style: appStyle(18, kPrimary, FontWeight.w600)),
+                        text:
+                            "VND ${((widget.food.price + controller.additivePrice) * controller.count.value)}",
+                        style: appStyle(18, kPrimary, FontWeight.w600),
+                      ),
                     )
                   ],
                 ),
@@ -184,9 +186,9 @@ class _FoodPageState extends State<FoodPage> {
                       return Container(
                         margin: EdgeInsets.only(right: 5.w),
                         decoration: BoxDecoration(
-                            color: kPrimary,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(15.r))),
+                          color: kPrimary,
+                          borderRadius: BorderRadius.all(Radius.circular(15.r)),
+                        ),
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 6.w),
                           child: ReusableText(
@@ -202,7 +204,7 @@ class _FoodPageState extends State<FoodPage> {
                   height: 15.h,
                 ),
                 ReusableText(
-                    text: "Additives and Toppings",
+                    text: "Phụ gia và toppings",
                     style: appStyle(18, kDark, FontWeight.w600)),
                 SizedBox(
                   height: 10.h,
@@ -229,7 +231,7 @@ class _FoodPageState extends State<FoodPage> {
                                 width: 5.w,
                               ),
                               ReusableText(
-                                  text: "\$ ${additive.price}",
+                                  text: "\vnd ${additive.price}",
                                   style:
                                       appStyle(11, kPrimary, FontWeight.w600)),
                             ],
@@ -249,7 +251,7 @@ class _FoodPageState extends State<FoodPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     ReusableText(
-                        text: "Qauntity",
+                        text: "Số lượng",
                         style: appStyle(18, kDark, FontWeight.bold)),
                     SizedBox(
                       width: 5.w,
@@ -284,7 +286,7 @@ class _FoodPageState extends State<FoodPage> {
                   height: 20.h,
                 ),
                 ReusableText(
-                  text: "Preferences",
+                  text: "Sở thích",
                   style: appStyle(18, kDark, FontWeight.w600),
                 ),
                 SizedBox(
@@ -294,7 +296,7 @@ class _FoodPageState extends State<FoodPage> {
                   height: 65.h,
                   child: CustomTextWidget(
                     controller: _preferences,
-                    hintText: "Add a note with your preferences",
+                    hintText: "Thêm một ghi chú với tùy chọn của bạn",
                     maxLines: 3,
                   ),
                 ),
@@ -344,7 +346,7 @@ class _FoodPageState extends State<FoodPage> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 12.w),
                           child: ReusableText(
-                              text: "Place Order",
+                              text: "Đặt hàng",
                               style:
                                   appStyle(18, kLightWhite, FontWeight.w600)),
                         ),

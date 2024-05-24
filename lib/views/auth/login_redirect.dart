@@ -20,35 +20,37 @@ class LoginRedirect extends StatelessWidget {
         backgroundColor: kLightWhite,
         elevation: 0.3,
         title: ReusableText(
-            text: "Please login to access this page",
-            style: appStyle(12, kDark, FontWeight.w500)),
+          text: "Vui lòng đăng nhập để truy cập trang",
+          style: appStyle(12, kDark, FontWeight.w500),
+        ),
       ),
       body: SafeArea(
         child: CustomContainer(
-            containerContent: Column(
-          children: [
-            Container(
-              width: width,
-              height: height / 2,
-              color: Colors.white,
-              child: LottieBuilder.asset(
-                "assets/anime/delivery.json",
+          containerContent: Column(
+            children: [
+              Container(
                 width: width,
                 height: height / 2,
+                color: Colors.white,
+                child: LottieBuilder.asset(
+                  "assets/anime/delivery.json",
+                  width: width,
+                  height: height / 2,
+                ),
               ),
-            ),
-            CustomButton(
-              text: "L O G I N",
-              onTap: () {
-                Get.to(() => const LoginPage(),
-                    transition: Transition.cupertino,
-                    duration: const Duration(milliseconds: 900));
-              },
-              btnHeight: 40.h,
-              btnWidth: width - 20,
-            )
-          ],
-        )),
+              CustomButton(
+                text: "ĐĂNG NHẬP",
+                onTap: () {
+                  Get.to(() => const LoginPage(),
+                      transition: Transition.cupertino,
+                      duration: const Duration(milliseconds: 900));
+                },
+                btnHeight: 40.h,
+                btnWidth: width - 20,
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

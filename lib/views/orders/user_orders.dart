@@ -29,7 +29,8 @@ class _UserOrdersState extends State<UserOrders> with TickerProviderStateMixin {
         backgroundColor: kOffWhite,
         elevation: 0,
         title: ReusableText(
-            text: "My Orders", style: appStyle(14, kPrimary, FontWeight.w600)),
+            text: "Đơn đặt hàng của tôi",
+            style: appStyle(14, kPrimary, FontWeight.w600)),
       ),
       body: BackGroundContainer(
         color: kLightWhite,

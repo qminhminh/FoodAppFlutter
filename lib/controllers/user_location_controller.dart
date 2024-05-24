@@ -97,8 +97,8 @@ class UserLocationController extends GetxController {
       var response = await http.post(url, headers: headers, body: data);
 
       if (response.statusCode == 201) {
-        Get.snackbar(
-            "Your address has been added", "Enjoy your awesome experience",
+        Get.snackbar("Địa chỉ của bạn đã được thêm vào",
+            "Hãy tận hưởng trải nghiệm tuyệt vời của bạn",
             colorText: kLightWhite,
             backgroundColor: kPrimary,
             icon: const Icon(Ionicons.fast_food_outline));
@@ -107,7 +107,7 @@ class UserLocationController extends GetxController {
       } else {
         var error = apiErrorFromJson(response.body);
 
-        Get.snackbar("Failed to add address", error.message,
+        Get.snackbar("Không thể thêm địa chỉ", error.message,
             colorText: kLightWhite,
             backgroundColor: kRed,
             icon: const Icon(Icons.error_outline));

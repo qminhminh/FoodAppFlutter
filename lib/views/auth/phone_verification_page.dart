@@ -23,31 +23,33 @@ class _PhoneVerificationPageState extends State<PhoneVerificationPage> {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(PhoneVerificationController());
-    return Obx(() => controller.isLoading == false
-        ? PhoneVerification(
-            isFirstPage: false,
-            enableLogo: false,
-            themeColor: kPrimary,
-            backgroundColor: kLightWhite,
-            initialPageText: "Verify Phone Number",
-            initialPageTextStyle: appStyle(20, kPrimary, FontWeight.bold),
-            textColor: kDark,
-            onSend: (String value) {
-              controller.setPhoneNumber = value;
-              _verifyPhoneNumber(value);
-            },
-            onVerification: (String value) {
-              _submitVerificationCode(value);
-            },
-          )
-        : Container(
-            color: kLightWhite,
-            width: width,
-            height: height,
-            child: const Center(
-              child: CircularProgressIndicator(),
+    return Obx(
+      () => controller.isLoading == false
+          ? PhoneVerification(
+              isFirstPage: false,
+              enableLogo: false,
+              themeColor: kPrimary,
+              backgroundColor: kLightWhite,
+              initialPageText: "Xác minh số điện thoại",
+              initialPageTextStyle: appStyle(20, kPrimary, FontWeight.bold),
+              textColor: kDark,
+              onSend: (String value) {
+                controller.setPhoneNumber = value;
+                _verifyPhoneNumber(value);
+              },
+              onVerification: (String value) {
+                _submitVerificationCode(value);
+              },
+            )
+          : Container(
+              color: kLightWhite,
+              width: width,
+              height: height,
+              child: const Center(
+                child: CircularProgressIndicator(),
+              ),
             ),
-          ));
+    );
   }
 
   void _verifyPhoneNumber(String phoneNumber) async {

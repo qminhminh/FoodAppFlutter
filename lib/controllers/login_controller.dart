@@ -46,8 +46,8 @@ class LoginController extends GetxController {
 
         setLoading = false;
 
-        Get.snackbar(
-            "You are succefully logged in", "Enjoy your awesome experience",
+        Get.snackbar("Bạn đã đăng nhập thành công",
+            "Tận hưởng trải nghiệm tuyệt vời của bạn",
             colorText: kLightWhite,
             backgroundColor: kPrimary,
             icon: const Icon(Ionicons.fast_food_outline));
@@ -66,7 +66,7 @@ class LoginController extends GetxController {
       } else {
         var error = apiErrorFromJson(response.body);
 
-        Get.snackbar("Failed to login", error.message,
+        Get.snackbar("Đăng nhập thất bại", error.message,
             colorText: kLightWhite,
             backgroundColor: kRed,
             icon: const Icon(Icons.error_outline));

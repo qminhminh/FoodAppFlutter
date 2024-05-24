@@ -65,19 +65,19 @@ class ProfilePage extends StatelessWidget {
                               transition: Transition.cupertino,
                               duration: const Duration(milliseconds: 900));
                         },
-                        title: "My Orders",
+                        title: "Đơn đặt hàng của tôi",
                         icon: Ionicons.fast_food_outline),
                     ProfileTileWidget(
                         onTap: () {},
-                        title: "My Favorite Places",
+                        title: "Địa điểm yêu thích của tôi",
                         icon: Ionicons.heart_outline),
                     ProfileTileWidget(
                         onTap: () {},
-                        title: "Review",
+                        title: "Ôn tập",
                         icon: Ionicons.chatbubble_outline),
                     ProfileTileWidget(
                         onTap: () {},
-                        title: "Coupons",
+                        title: "Phiếu giảm giá",
                         icon: MaterialCommunityIcons.tag_outline),
                   ],
                 ),
@@ -100,19 +100,19 @@ class ProfilePage extends StatelessWidget {
                             duration: const Duration(milliseconds: 900),
                           );
                         },
-                        title: "Shipping Address",
+                        title: "Địa chỉ giao hàng",
                         icon: SimpleLineIcons.location_pin),
                     ProfileTileWidget(
                         onTap: () {},
-                        title: "Sevice Center",
+                        title: "Trung tâm dịch vụ",
                         icon: AntDesign.customerservice),
                     ProfileTileWidget(
                         onTap: () {},
-                        title: "Coupons",
+                        title: "Phiếu giảm giá",
                         icon: MaterialIcons.rss_feed),
                     ProfileTileWidget(
                         onTap: () {},
-                        title: "Settings",
+                        title: "Cài đặt",
                         icon: AntDesign.setting),
                   ],
                 ),
@@ -125,7 +125,7 @@ class ProfilePage extends StatelessWidget {
                   controller.logout();
                 },
                 btnColor: kRed,
-                text: "Logout",
+                text: "Đăng xuất",
                 radius: 0,
               )
             ],

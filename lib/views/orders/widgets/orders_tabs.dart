@@ -17,17 +17,20 @@ class OrdersTabs extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TabBar(
-          controller: _tabController,
-          isScrollable: true,
-          dividerColor: Colors.transparent,
-          indicator: BoxDecoration(
-              borderRadius: BorderRadius.circular(25.r), color: kPrimary),
-          labelColor: Colors.white,
-          labelStyle: appStyle(12, kLightWhite, FontWeight.normal),
-          unselectedLabelColor: kGrayLight,
-          tabAlignment: TabAlignment.start,
-          tabs: List.generate(
-              orderList.length, (i) => TabWidget(text: orderList[i]))),
+        controller: _tabController,
+        isScrollable: true,
+        dividerColor: Colors.transparent,
+        indicator: BoxDecoration(
+            borderRadius: BorderRadius.circular(25.r), color: kPrimary),
+        labelColor: Colors.white,
+        labelStyle: appStyle(12, kLightWhite, FontWeight.normal),
+        unselectedLabelColor: kGrayLight,
+        tabAlignment: TabAlignment.start,
+        tabs: List.generate(
+          orderList.length,
+          (i) => TabWidget(text: orderList[i]),
+        ),
+      ),
     );
   }
 }

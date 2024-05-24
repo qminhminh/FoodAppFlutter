@@ -63,7 +63,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               SizedBox(
                 height: 30.h,
               ),
-              Lottie.asset("assets/anime/delivery.json"),
+              Lottie.asset("assets/anime/empty.json"),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(

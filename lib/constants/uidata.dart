@@ -346,13 +346,13 @@ const cart = [
 
 const profile = {
   "_id": "6537a4448cd1bd140ebddcee",
-  "username": "Dbestech",
+  "username": "Nhi",
   "email": "db@king.com",
   "uid": "4NmOkCbvu7ToaBS9ZR1UVpv0G1g2",
   "address": [],
   "userType": "Vendor",
   "profile":
-      "https://d326fntlu7tb1e.cloudfront.net/uploads/bdec9d7d-0544-4fc4-823d-3b898f6dbbbf-vinci_03.jpeg",
+      "https://res.cloudinary.com/dp2bicmif/image/upload/v1716555530/yxi1fcm3sm4i9imcnr60.png",
   "updatedAt": "2023-10-24T11:02:28.215Z"
 };
 

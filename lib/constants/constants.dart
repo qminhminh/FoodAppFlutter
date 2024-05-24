@@ -6,7 +6,7 @@ String googleApiKey = 'AIzaSyDuDxriw8CH8NbVLiXtKFQ2Nb64AoRSdyg';
 
 const kPrimary = Color.fromARGB(255, 240, 185, 96);
 const kPrimaryLight = Color(0xFF40F3EA);
-const kSecondary = Color.fromARGB(255, 48, 24, 2);
+const kSecondary = Color.fromARGB(255, 163, 83, 7);
 const kSecondaryLight = Color(0xFFffe5db);
 const kTertiary = Color(0xff0078a6);
 const kGray = Color(0xff83829A);

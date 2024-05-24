@@ -231,7 +231,7 @@ class _FoodPageState extends State<FoodPage> {
                                 width: 5.w,
                               ),
                               ReusableText(
-                                  text: "\vnd ${additive.price}",
+                                  text: "${additive.price} vnd",
                                   style:
                                       appStyle(11, kPrimary, FontWeight.w600)),
                             ],

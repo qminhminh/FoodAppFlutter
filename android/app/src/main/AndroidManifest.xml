@@ -15,7 +15,7 @@
     <application
         android:label="Food Style"
         android:name="${applicationName}"
-        android:icon="@mipmap/logo">
+        android:icon="@mipmap/logo1">
         <activity
             android:name=".MainActivity"
             android:exported="true"

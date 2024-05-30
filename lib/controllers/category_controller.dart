@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_final_fields
+// ignore_for_file: prefer_final_fields, unused_element
 
 import 'package:get/get.dart';
 
@@ -17,5 +17,12 @@ class CategoryController extends GetxController {
 
   set updateTitle(String value) {
     _title.value = value;
+  }
+
+  RxString _ipv4 = ''.obs;
+  String get ipv4Value => _ipv4.value;
+
+  set updateIpv4(String value) {
+    _ipv4.value = value;
   }
 }

@@ -21,7 +21,7 @@ class BackGroundContainer extends StatelessWidget {
           topRight: Radius.circular(20.r),
         ),
         image: const DecorationImage(
-          image: AssetImage("assets/images/restaurant_bk.png"),
+          image: AssetImage("assets/images/backgound1.jpg"),
           fit: BoxFit.cover,
           opacity: .7,
         ),

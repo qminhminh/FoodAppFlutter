@@ -1,8 +1,10 @@
 import 'dart:ui';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:foodappflutter/controllers/category_controller.dart';
+import 'package:get/get.dart';
 
 String googleApiKey = 'AIzaSyDuDxriw8CH8NbVLiXtKFQ2Nb64AoRSdyg';
+final controller = Get.find<CategoryController>();
 
 const kPrimary = Color.fromARGB(255, 240, 185, 96);
 const kPrimaryLight = Color(0xFF40F3EA);
@@ -20,8 +22,8 @@ const kOffWhite = Color(0xffF3F4F8);
 double height = 825.h;
 double width = 375.w;
 
-const String appBaseUrl = "http://192.168.1.9:3000";
-const String appBaseUrlPayment = "http://192.168.1.9:3003";
+String appBaseUrl = "http://${controller.ipv4Value}:3000";
+String appBaseUrlPayment = "http://${controller.ipv4Value}:3003";
 
 final List<String> verificationReasons = [
   'Cập nhật thời gian thực: Nhận thông báo tức thì về trạng thái đơn đặt hàng của bạn.',
@@ -29,6 +31,7 @@ final List<String> verificationReasons = [
   'Bảo mật nâng cao: Bảo vệ tài khoản của bạn và xác nhận đơn đặt hàng một cách an toàn.',
   'Sắp xếp lại dễ dàng: dễ dàng giải quyết các vấn đề với một cuộc gọi nhanh.',
 ];
+
 List<String> orderList = [
   "Chưa giải quyết",
   "Chuẩn bị",

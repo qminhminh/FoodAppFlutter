@@ -110,7 +110,7 @@ class OrderPage extends StatelessWidget {
                             ),
                             RowText(
                                 first: "Giá từ quán",
-                                second: "\$ ${data.price.toStringAsFixed(2)}"),
+                                second: "vnd ${data.price.toStringAsFixed(2)}"),
                             SizedBox(
                               height: 5.h,
                             ),
@@ -119,13 +119,13 @@ class OrderPage extends StatelessWidget {
                             ),
                             RowText(
                                 first: "Tổng số đặt hàng",
-                                second: "\$ ${item.price.toString()}"),
+                                second: "vnd ${item.price.toString()}"),
                             SizedBox(
                               height: 5.h,
                             ),
                             RowText(
                                 first: "Tổng cộng",
-                                second: "\$ ${totalPrice.toStringAsFixed(2)}"),
+                                second: "vnd ${totalPrice.toStringAsFixed(2)}"),
                             SizedBox(
                               height: 10.h,
                             ),

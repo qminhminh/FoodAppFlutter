@@ -71,14 +71,14 @@ class _RestaurantPageState extends State<RestaurantPage>
                   ),
                   const RowText(
                     first: "Giá ước tính",
-                    second: "\$2.7",
+                    second: "vnd 5.000",
                   ),
                   SizedBox(
                     height: 3.h,
                   ),
                   const RowText(
                     first: "Thơi gian dự định",
-                    second: "30 min",
+                    second: "30 phút",
                   ),
                   const Divider(
                     thickness: 0.7,

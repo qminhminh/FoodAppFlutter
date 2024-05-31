@@ -134,7 +134,7 @@ class CartTile extends StatelessWidget {
               ),
               child: Center(
                 child: ReusableText(
-                  text: "\$ ${cart.totalPrice.toStringAsFixed(2)}",
+                  text: "vnd ${cart.totalPrice.toStringAsFixed(2)}",
                   style: appStyle(12, kLightWhite, FontWeight.bold),
                 ),
               ),

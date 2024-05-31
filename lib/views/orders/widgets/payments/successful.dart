@@ -116,12 +116,12 @@ class _SuccessfulState extends State<Successful> {
                             ]),
                             TableRow(children: [
                               ReusableText(
-                                  text: "Amount",
+                                  text: "Số lượng",
                                   style:
                                       appStyle(11, kGray, FontWeight.normal)),
                               ReusableText(
                                   text:
-                                      "\$ ${orderController.order!.grandTotal.toStringAsFixed(2)}",
+                                      "vnd ${orderController.order!.grandTotal.toStringAsFixed(2)}",
                                   style:
                                       appStyle(11, kGray, FontWeight.normal)),
                             ]),

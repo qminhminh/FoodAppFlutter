@@ -16,6 +16,7 @@ import 'package:foodappflutter/models/order_request.dart';
 import 'package:foodappflutter/models/restaurants_model.dart';
 import 'package:foodappflutter/services/distance.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class OrderPage extends StatelessWidget {
   const OrderPage(
@@ -44,7 +45,7 @@ class OrderPage extends StatelessWidget {
 
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-
+    final NumberFormat currencyFormatter = NumberFormat("###,##0.000", "vi_VN");
     return Obx(
       () => controller.paymentUrl.contains('https')
           ? const PaymentWebView()
@@ -70,7 +71,7 @@ class OrderPage extends StatelessWidget {
                         padding: EdgeInsets.symmetric(
                             horizontal: 10.w, vertical: 10.h),
                         width: width,
-                        height: height / 3.7,
+                        height: height / 3.2,
                         decoration: BoxDecoration(
                             color: kOffWhite,
                             borderRadius: BorderRadius.circular(12.r)),
@@ -110,7 +111,8 @@ class OrderPage extends StatelessWidget {
                             ),
                             RowText(
                                 first: "Giá từ quán",
-                                second: "vnd ${data.price.toStringAsFixed(2)}"),
+                                second:
+                                    "${currencyFormatter.format(double.tryParse(data.price.toStringAsFixed(2)) ?? 0.0)}VND"),
                             SizedBox(
                               height: 5.h,
                             ),
@@ -119,13 +121,15 @@ class OrderPage extends StatelessWidget {
                             ),
                             RowText(
                                 first: "Tổng số đặt hàng",
-                                second: "vnd ${item.price.toString()}"),
+                                second:
+                                    "${currencyFormatter.format(double.tryParse(item.price.toString()) ?? 0.0)}VND}"),
                             SizedBox(
                               height: 5.h,
                             ),
                             RowText(
                                 first: "Tổng cộng",
-                                second: "vnd ${totalPrice.toStringAsFixed(2)}"),
+                                second:
+                                    "${currencyFormatter.format(double.tryParse(totalPrice.toStringAsFixed(2)) ?? 0.0)}VND"),
                             SizedBox(
                               height: 10.h,
                             ),
@@ -137,7 +141,7 @@ class OrderPage extends StatelessWidget {
                             ),
                             SizedBox(
                               width: width,
-                              height: 15.h,
+                              height: 25.h,
                               child: ListView.builder(
                                   scrollDirection: Axis.horizontal,
                                   itemCount: item.additives.length,
@@ -157,7 +161,7 @@ class OrderPage extends StatelessWidget {
                                           child: ReusableText(
                                               text: additive,
                                               style: appStyle(
-                                                  8, kGray, FontWeight.w400)),
+                                                  15, kGray, FontWeight.w400)),
                                         ),
                                       ),
                                     );

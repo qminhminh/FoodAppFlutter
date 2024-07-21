@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:foodappflutter/common/app_style.dart';
 import 'package:foodappflutter/common/reusable_text.dart';
 import 'package:foodappflutter/constants/constants.dart';
+import 'package:intl/intl.dart';
 
 class FoodWidget extends StatelessWidget {
   const FoodWidget(
@@ -21,6 +22,8 @@ class FoodWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final NumberFormat currencyFormatter = NumberFormat("###,##0.000", "vi_VN");
+    final double parsedPrice = double.tryParse(price) ?? 0.0;
     return GestureDetector(
       onTap: onTap,
       child: Padding(
@@ -61,7 +64,8 @@ class FoodWidget extends StatelessWidget {
                             text: title,
                             style: appStyle(12, kDark, FontWeight.w500)),
                         ReusableText(
-                            text: "$price vnd",
+                            text:
+                                "${currencyFormatter.format(parsedPrice)} VND",
                             style: appStyle(12, kPrimary, FontWeight.w600)),
                       ],
                     ),

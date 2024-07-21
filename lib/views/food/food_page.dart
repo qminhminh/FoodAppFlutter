@@ -27,6 +27,7 @@ import 'package:foodappflutter/views/auth/login_page.dart';
 import 'package:foodappflutter/views/orders/order_page.dart';
 import 'package:foodappflutter/views/restaurant/restaurant_page.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:get_storage/get_storage.dart';
 
 class FoodPage extends StatefulHookWidget {
@@ -59,6 +60,8 @@ class _FoodPageState extends State<FoodPage> {
 
     user = loginController.getUserInfo();
     controller.loadAdditives(widget.food.additives);
+
+    final NumberFormat currencyFormatter = NumberFormat("###,##0.000", "vi_VN");
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.zero,
@@ -158,7 +161,7 @@ class _FoodPageState extends State<FoodPage> {
                     Obx(
                       () => ReusableText(
                         text:
-                            "VND ${((widget.food.price + controller.additivePrice) * controller.count.value)}",
+                            "${currencyFormatter.format((widget.food.price + controller.additivePrice) * controller.count.value)} VND",
                         style: appStyle(18, kPrimary, FontWeight.w600),
                       ),
                     )
@@ -171,7 +174,7 @@ class _FoodPageState extends State<FoodPage> {
                   widget.food.description,
                   textAlign: TextAlign.justify,
                   maxLines: 8,
-                  style: appStyle(11, kGray, FontWeight.w400),
+                  style: appStyle(13, kGray, FontWeight.w400),
                 ),
                 SizedBox(
                   height: 5.h,
@@ -226,14 +229,15 @@ class _FoodPageState extends State<FoodPage> {
                             children: [
                               ReusableText(
                                   text: additive.title,
-                                  style: appStyle(11, kDark, FontWeight.w400)),
+                                  style: appStyle(13, kDark, FontWeight.w400)),
                               SizedBox(
                                 width: 5.w,
                               ),
                               ReusableText(
-                                  text: "${additive.price} vnd",
+                                  text:
+                                      "${currencyFormatter.format(double.tryParse(additive.price) ?? 0.0)}VND",
                                   style:
-                                      appStyle(11, kPrimary, FontWeight.w600)),
+                                      appStyle(13, kPrimary, FontWeight.w600)),
                             ],
                           ),
                           onChanged: (bool? value) {

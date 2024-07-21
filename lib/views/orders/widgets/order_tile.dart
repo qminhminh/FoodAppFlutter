@@ -11,6 +11,7 @@ import 'package:foodappflutter/controllers/cart_controller.dart';
 import 'package:foodappflutter/models/cart_request.dart';
 import 'package:foodappflutter/models/foods_model.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class OrderTile extends StatelessWidget {
   OrderTile({super.key, required this.food, this.color});
@@ -21,6 +22,7 @@ class OrderTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(CartController());
+    final NumberFormat currencyFormatter = NumberFormat("###,##0.000", "vi_VN");
     return Stack(
       clipBehavior: Clip.hardEdge,
       children: [
@@ -120,13 +122,14 @@ class OrderTile extends StatelessWidget {
           right: 5.w,
           top: 6.h,
           child: Container(
-            width: 60.w,
+            width: 65.w,
             height: 19.h,
             decoration: BoxDecoration(
                 color: kPrimary, borderRadius: BorderRadius.circular(10.r)),
             child: Center(
               child: ReusableText(
-                  text: "vnd ${food.price.toStringAsFixed(2)}",
+                  text:
+                      "${currencyFormatter.format(double.tryParse(food.price.toStringAsFixed(2)) ?? 0.0)}VND",
                   style: appStyle(12, kLightWhite, FontWeight.bold)),
             ),
           ),

@@ -9,6 +9,7 @@ import 'package:foodappflutter/constants/constants.dart';
 import 'package:foodappflutter/controllers/orders_controller.dart';
 import 'package:foodappflutter/views/entrypoint.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class Successful extends StatefulWidget {
   const Successful({super.key});
@@ -28,6 +29,7 @@ class _SuccessfulState extends State<Successful> {
   @override
   Widget build(BuildContext context) {
     final orderController = Get.put(OrdersController());
+    final NumberFormat currencyFormatter = NumberFormat("###,##0.000", "vi_VN");
     Timer(const Duration(seconds: 3), () {
       orderController.setIcon = true;
     });
@@ -53,7 +55,7 @@ class _SuccessfulState extends State<Successful> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/restaurant_bk.png"),
+              image: AssetImage("assets/images/backgound1.png"),
               fit: BoxFit.cover),
         ),
         child: Center(
@@ -61,7 +63,7 @@ class _SuccessfulState extends State<Successful> {
             clipBehavior: Clip.none,
             children: [
               Container(
-                height: height * 0.3.h,
+                height: height * 0.8.h,
                 width: width - 40,
                 decoration: BoxDecoration(
                     color: kOffWhite,
@@ -88,17 +90,17 @@ class _SuccessfulState extends State<Successful> {
                               ReusableText(
                                   text: "ID đặt hàng",
                                   style:
-                                      appStyle(11, kGray, FontWeight.normal)),
+                                      appStyle(12, kGray, FontWeight.normal)),
                               ReusableText(
                                   text: orderController.orderId,
                                   style:
-                                      appStyle(11, kGray, FontWeight.normal)),
+                                      appStyle(12, kGray, FontWeight.normal)),
                             ]),
                             TableRow(children: [
                               ReusableText(
                                   text: "ID thanh toán",
                                   style:
-                                      appStyle(11, kGray, FontWeight.normal)),
+                                      appStyle(12, kGray, FontWeight.normal)),
                               ReusableText(
                                   text: "113456",
                                   style:
@@ -108,44 +110,44 @@ class _SuccessfulState extends State<Successful> {
                               ReusableText(
                                   text: "Phương thức thanh toán",
                                   style:
-                                      appStyle(11, kGray, FontWeight.normal)),
+                                      appStyle(12, kGray, FontWeight.normal)),
                               ReusableText(
                                   text: "Stripe",
                                   style:
-                                      appStyle(11, kGray, FontWeight.normal)),
+                                      appStyle(12, kGray, FontWeight.normal)),
                             ]),
                             TableRow(children: [
                               ReusableText(
                                   text: "Số lượng",
                                   style:
-                                      appStyle(11, kGray, FontWeight.normal)),
+                                      appStyle(12, kGray, FontWeight.normal)),
                               ReusableText(
                                   text:
-                                      "vnd ${orderController.order!.grandTotal.toStringAsFixed(2)}",
+                                      "${currencyFormatter.format(double.tryParse(orderController.order!.grandTotal.toStringAsFixed(2)) ?? 0.0)}VND}",
                                   style:
-                                      appStyle(11, kGray, FontWeight.normal)),
+                                      appStyle(12, kGray, FontWeight.normal)),
                             ]),
                             TableRow(children: [
                               ReusableText(
                                   text: "Quán",
                                   style:
-                                      appStyle(11, kGray, FontWeight.normal)),
+                                      appStyle(12, kGray, FontWeight.normal)),
                               ReusableText(
                                   text: orderController.order!.restaurantId,
                                   style:
-                                      appStyle(11, kGray, FontWeight.normal)),
+                                      appStyle(12, kGray, FontWeight.normal)),
                             ]),
                             TableRow(children: [
                               ReusableText(
                                   text: "Ngày",
                                   style:
-                                      appStyle(11, kGray, FontWeight.normal)),
+                                      appStyle(12, kGray, FontWeight.normal)),
                               ReusableText(
                                   text: DateTime.now()
                                       .toString()
                                       .substring(0, 10),
                                   style:
-                                      appStyle(11, kGray, FontWeight.normal)),
+                                      appStyle(12, kGray, FontWeight.normal)),
                             ]),
                           ],
                         ),

@@ -71,7 +71,7 @@ class _RestaurantPageState extends State<RestaurantPage>
                   ),
                   const RowText(
                     first: "Giá ước tính",
-                    second: "vnd 5.000",
+                    second: "5.000 VND",
                   ),
                   SizedBox(
                     height: 3.h,

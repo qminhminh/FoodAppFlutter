@@ -18,8 +18,8 @@ class RowText extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        ReusableText(text: first, style: appStyle(10, kGray, FontWeight.w500)),
-        ReusableText(text: second, style: appStyle(10, kGray, FontWeight.w500))
+        ReusableText(text: first, style: appStyle(14, kGray, FontWeight.w500)),
+        ReusableText(text: second, style: appStyle(14, kGray, FontWeight.w500))
       ],
     );
   }

@@ -99,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                             child: ReusableText(
                               text: "Đăng ký",
                               style:
-                                  appStyle(12, Colors.blue, FontWeight.normal),
+                                  appStyle(13, Colors.blue, FontWeight.normal),
                             ),
                           ),
                         ],

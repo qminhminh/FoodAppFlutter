@@ -10,6 +10,7 @@ import 'package:foodappflutter/constants/constants.dart';
 import 'package:foodappflutter/controllers/cart_controller.dart';
 import 'package:foodappflutter/models/cart_response.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class CartTile extends StatelessWidget {
   CartTile({super.key, required this.cart, this.color, this.refetch});
@@ -21,6 +22,7 @@ class CartTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(CartController());
+    final NumberFormat currencyFormatter = NumberFormat("###,##0.000", "vi_VN");
     return GestureDetector(
       onTap: () {
         // Get.to(() => FoodPage(food: food));
@@ -134,7 +136,8 @@ class CartTile extends StatelessWidget {
               ),
               child: Center(
                 child: ReusableText(
-                  text: "vnd ${cart.totalPrice.toStringAsFixed(2)}",
+                  text:
+                      "${currencyFormatter.format(double.tryParse(cart.totalPrice.toStringAsFixed(2)) ?? 0.0)} vnd ",
                   style: appStyle(12, kLightWhite, FontWeight.bold),
                 ),
               ),
